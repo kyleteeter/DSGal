@@ -17,7 +17,7 @@ export default function FeatureIcon({ content, icon, title }) {
         h={12}
         w={12}
         borderRadius="md"
-        bg="indigo.500"
+        bg="pink.500"
         color="white"
       >
         <Box as={IconComponent} w={6} h={6} aria-hidden="true" />

@@ -4,7 +4,7 @@ import Navigation from '@/components/navigation'
 export default function ContentLayout({ children, page }) {
   return (
     <>
-      <Navigation {...(page?.navigation && { ...page.navigation })} />
+      <Navigation />
       <div>{children}</div>
     </>
   )

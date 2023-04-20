@@ -31,7 +31,7 @@ export default function PersonCard({ name, photo, role }) {
           <h3>{name}</h3>
 
           {role && (
-            <Text color="indigo.600" mt={1}>
+            <Text color="pink.500" mt={1}>
               {role}
             </Text>
           )}

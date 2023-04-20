@@ -43,7 +43,23 @@ export const theme = extendTheme({
     },
     green: {
       500: '#10B981'
-    }
+    },
+    pink: {
+      400: '#E5BFAD',
+      300: 'red',
+      500: '#c6814d'
+    },
+    teal: {
+      200: '#83C5BE',
+      500: '#006d77'
+    },
+    palette: {
+      'white': '#FFFFFF',
+      'beige': '#FAF8F2',
+      'pink': '#F4E7E4',
+      'brown': '#E7D3C6',
+      'black': '#1F2938'
+    },
   },
   components: {
     Container: {
@@ -53,20 +69,20 @@ export const theme = extendTheme({
     },
     Link: {
       variants: {
-        INDIGO: {
-          bg: 'indigo.600',
-          color: 'white',
+        BROWN: {
+          bg: 'palette.brown',
+          color: 'palette.black',
           _hover: {
             textDecoration: 'none',
-            backgroundColor: 'indigo.700'
+            backgroundColor: 'palette.beige',
           }
         },
-        WHITE: {
-          bg: 'white',
-          color: 'indigo.600',
+        PINK: {
+          bg: 'palette.pink',
+          color: 'palette.black',
           _hover: {
             textDecoration: 'none',
-            backgroundColor: 'gray.50'
+            backgroundColor: 'palette.beige',
           }
         }
       }
@@ -75,7 +91,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       'html, body': {
-        color: 'gray.500'
+        color: 'gray.800'
       },
       'ul, ol': {
         listStyle: 'none'

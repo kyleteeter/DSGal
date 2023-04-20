@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote'
 
@@ -9,9 +9,9 @@ export default function Testimonial({ content, person }) {
   if (!person) return null
 
   return (
-    <Box as="section" py={[12, null, 20, 24]} bg="gray.50" overflow="hidden">
+    <Box as="section" py={[12, null, 20, 24]} bg="gray.90" overflow="hidden">
       <Box pos="relative" maxW="7xl" mx="auto" px={[4, 6, null, 8]}>
-        <Box
+        {/* <Box
           as={DotsSVG}
           pos="absolute"
           top="100%"
@@ -22,15 +22,15 @@ export default function Testimonial({ content, person }) {
             lg: 'translate(50%, -25%)',
             xl: 'translate(50%, -50%)'
           }}
-        />
+        /> */}
         <Box pos="relative">
-          <Box h={8} pos="relative">
+          {/* <Box h={8} pos="relative">
             <Image
               src={person.company.logo.url}
               alt={person.company.logo.title}
               layout="fill"
             />
-          </Box>
+          </Box> */}
           <Box as="blockquote" mt={10}>
             <Box
               maxW="3xl"
@@ -39,7 +39,7 @@ export default function Testimonial({ content, person }) {
               fontSize="2xl"
               lineHeight="9"
               fontWeight="medium"
-              color="gray.900"
+              color={useColorModeValue('gray.900', 'white')}
             >
               <MDXRemote {...content.mdx} />
             </Box>
@@ -66,7 +66,7 @@ export default function Testimonial({ content, person }) {
                   display={{ md: 'flex' }}
                   alignItems={{ md: 'center' }}
                 >
-                  <Box fontWeight="medium" color="gray.900">
+                  <Box fontWeight="medium" color={useColorModeValue('gray.900', 'white')}>
                     {person.name}
                   </Box>
 
@@ -78,9 +78,9 @@ export default function Testimonial({ content, person }) {
                         mx={1}
                         h={5}
                         w={5}
-                        color="indigo.600"
+                        color="pink.500"
                       />
-                      <Box fontWeight="medium" color="gray.500">
+                      <Box fontWeight="medium" color={useColorModeValue('gray.500', 'gray.400')}>
                         {person.role}, {person.company.name}
                       </Box>
                     </>

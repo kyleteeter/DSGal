@@ -39,10 +39,10 @@ export default function BlogPostCard({
         justifyContent="space-between"
       >
         <Box flex="1 1 0">
-          <Text fontSize="sm" fontWeight="medium" color="indigo.600">
+          <Text fontSize="sm" fontWeight="medium" color="pink.500">
             {startCase(category.toLowerCase())}
           </Text>
-          <NextLink href={`/blog/${slug}`}>
+          <NextLink href={`/project/${slug}`}>
             <Link
               display="block"
               mt={2}

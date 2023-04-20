@@ -10,7 +10,7 @@ const linkDefaultStyles = {
   py: [3, null, 4],
   fontSize: ['base', null, 'lg'],
   fontWeight: 'medium',
-  borderRadius: 'md'
+  rounded: 'full'
 }
 
 export default function Button({ href, label, theme }) {
@@ -18,7 +18,7 @@ export default function Button({ href, label, theme }) {
 
   if (href.includes('http')) {
     return (
-      <Box borderRadius="md" boxShadow="md">
+      <Box>
         <ChakraLink
           isExternal
           href={href}
@@ -32,7 +32,7 @@ export default function Button({ href, label, theme }) {
   }
 
   return (
-    <Box borderRadius="md" boxShadow="md">
+    <Box>
       <Link href={href} passHref>
         <ChakraLink {...linkDefaultStyles} variant={theme}>
           {label}

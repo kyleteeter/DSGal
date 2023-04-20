@@ -20,7 +20,7 @@ export default function Dots({ ...props }) {
           height="20"
           patternUnits="userSpaceOnUse"
         >
-          <rect x="0" y="0" width="4" height="4" fill="currentColor" />
+          <rect x="0" y="0" width="4" height="4" fill="#F3E5E2" />
         </pattern>
       </defs>
       <rect

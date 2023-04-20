@@ -53,7 +53,7 @@ export default function PricingPlanCard({
           mt={8}
           display="block"
           w="full"
-          bg="indigo.600"
+          bg="pink.500"
           border="1px solid transparent"
           borderRadius="md"
           py={2}
@@ -62,7 +62,7 @@ export default function PricingPlanCard({
           color="white"
           textAlign="center"
           _hover={{
-            bg: 'indigo.700'
+            bg: 'pink.700'
           }}
         >
           Buy {name}

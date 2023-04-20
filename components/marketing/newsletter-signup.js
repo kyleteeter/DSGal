@@ -29,7 +29,7 @@ export default function NewsletterSignup({ ctaLabel, subtitle, title }) {
           fontWeight="extrabold"
           display={['inline', 'block']}
           letterSpacing="tight"
-          color="indigo.600"
+          color="pink.500"
         >
           {subtitle}
         </Text>
@@ -67,10 +67,10 @@ export default function NewsletterSignup({ ctaLabel, subtitle, title }) {
               height="full"
               px={5}
               py={3}
-              bg="indigo.600"
+              bg="pink.500"
               color="white"
               _hover={{
-                bg: 'indigo.700'
+                bg: 'pink.700'
               }}
             >
               {ctaLabel || 'Submit'}

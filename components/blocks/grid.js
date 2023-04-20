@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, Text } from '@chakra-ui/react'
+import { Box, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { MDXRemote } from 'next-mdx-remote'
 
 import * as Columns from '@/columns'
@@ -13,7 +13,6 @@ export default function Grid({
   gridTag,
   gridTitle,
   layout = 'STACKED',
-  theme = 'WHITE',
   width = 1
 }) {
   if (!columns || !columns.length) return null
@@ -22,7 +21,7 @@ export default function Grid({
   const splitLayout = layout === 'SPLIT'
 
   return (
-    <Box overflow="hidden" bg={theme === 'LIGHT' ? 'gray.50' : 'white'}>
+    <Box overflow="hidden" bg={useColorModeValue('white', 'gray.800')}>
       <Box pos="relative" maxW="7xl" mx="auto" py={12} px={[4, 6, null, 8]}>
         {splitLayout && (
           <Box
@@ -52,7 +51,7 @@ export default function Grid({
                 as="h2"
                 fontSize="md"
                 fontWeight="semibold"
-                color="indigo.600"
+                color="pink.500"
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
@@ -65,7 +64,7 @@ export default function Grid({
               fontWeight="extrabold"
               letterSpacing="tight"
               lineHeight="9"
-              color="gray.900"
+              color={useColorModeValue('gray.800', 'white')}
             >
               {gridTitle}
             </Text>
@@ -75,7 +74,7 @@ export default function Grid({
                 mt={4}
                 maxW="2xl"
                 fontSize="xl"
-                color="gray.500"
+                color={useColorModeValue('gray.500', 'gray.400')}
                 mx={{ lg: 'auto' }}
               >
                 <MDXRemote {...gridSubtitle.mdx} />

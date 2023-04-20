@@ -5,7 +5,8 @@ import {
   VisuallyHidden,
   Link,
   Stack,
-  HStack
+  HStack,
+  useColorModeValue
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
@@ -19,6 +20,8 @@ import { parsePostData } from '@/utils/_parsePostData'
 import SEO from '@/components/seo'
 
 export default function BlogPost({ nextPost, post, previousPost }) {
+  const authorNameStyle = useColorModeValue('gray.900', 'gray.300')
+  const postNavStyle = useColorModeValue('gray.500', 'white')
   return (
     <>
       <SEO {...post.seo} />
@@ -40,7 +43,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   fontSize="md"
                   lineHeight="6"
                   fontWeight="medium"
-                  color="gray.500"
+                  color={useColorModeValue('gray.500', 'gray.400')}
                 >
                   <Box as="time" dateTime={post.published}>
                     {post.formattedPublished}
@@ -52,7 +55,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
               <Heading
                 as="h1"
                 fontWeight="extrabold"
-                color="gray.900"
+                color={useColorModeValue('gray.900', 'white')}
                 lineHeight="none"
                 letterSpacing="tight"
                 fontSize={['4xl', '5xl', '6xl', '5xl', '6xl']}
@@ -100,7 +103,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                       lineHeight="5"
                     >
                       <VisuallyHidden as="dt">Name</VisuallyHidden>
-                      <Box as="dd" color="gray.900">
+                      <Box as="dd" color={authorNameStyle}>
                         {author.name}
                       </Box>
                     </Box>
@@ -127,7 +130,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                 />
               </Box>
             )}
-            <Box maxW="none" pt={10} pb={8} color="gray.500" className="prose">
+            <Box maxW="none" pt={10} pb={8} color={useColorModeValue('gray.500', 'white')} className="prose">
               <MDXRemote {...post.content.mdx} />
             </Box>
           </Box>
@@ -156,14 +159,14 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                       letterSpacing="wide"
                       textTransform="uppercase"
                       lineHeight="4"
-                      color="gray.500"
+                      color={postNavStyle}
                     >
                       Next Post
                     </Heading>
                     <Box
-                      color="indigo.500"
+                      color="pink.500"
                       _hover={{
-                        color: 'indigo.600'
+                        color: 'pink.500'
                       }}
                     >
                       <NextLink href={`/blog/${nextPost.slug}`}>
@@ -181,14 +184,14 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                       letterSpacing="wide"
                       textTransform="uppercase"
                       lineHeight="4"
-                      color="gray.500"
+                      color={postNavStyle}
                     >
                       Previous Post
                     </Heading>
                     <Box
-                      color="indigo.500"
+                      color="pink.500"
                       _hover={{
-                        color: 'indigo.600'
+                        color: 'pink.500'
                       }}
                     >
                       <NextLink href={`/blog/${previousPost.slug}`}>
@@ -202,9 +205,9 @@ export default function BlogPost({ nextPost, post, previousPost }) {
             <Box pt={8}>
               <NextLink href="/blog">
                 <Link
-                  color="indigo.500"
+                  color="pink.500"
                   _hover={{
-                    color: 'indigo.600'
+                    color: 'pink.500'
                   }}
                 >
                   &larr; Back to the blog

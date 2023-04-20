@@ -1,231 +1,299 @@
-import { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Flex,
-  VisuallyHidden,
-  Grid,
-  Button,
   Text,
-  Link as ChakraLink,
-  Stack
-} from '@chakra-ui/react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { Transition } from 'react-transition-group'
+  IconButton,
+  Button,
+  Stack,
+  Collapse,
+  Icon,
+  Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  useColorModeValue,
+  useBreakpointValue,
+  useDisclosure,
+  useColorMode,
+  Center,
+} from "@chakra-ui/react";
+import {
+  HamburgerIcon,
+  CloseIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
+import { logoblack, logowhite } from "../assets";
+const NAV_ITEMS = [
+  {
+    label: "About",
+    href: "about",
+  },
+  {
+    label: "Portfolio",
+    children: [
+      {
+        label: "BloomTech Projects",
+        subLabel: "See Data Science at work.",
+        href: "project",
+      },
+      {
+        label: "Freelance Work",
+        subLabel: "Case studies of real clients.",
+        href: "#",
+      },
+    ],
+  },
+  {
+    label: "Projects",
+    href: "project",
+  },
+  {
+    label: "Hire Me",
+    href: "contact",
+  },
+];
 
-import { LogoSVG, MarkSVG } from '@/svgs'
-import { MenuIcon, XIcon } from '@/icons'
 
-const defaultStyle = {
-  transition: `all 150ms cubic-bezier(0.4, 0, 1, 1)`
-}
-
-const transitionStyles = {
-  entering: { transform: 'scale(0.95)', opacity: 0, visibility: 'hidden' },
-  entered: { transform: 'scale(1)', opacity: 1, visibility: 'visible' },
-  exiting: { transform: 'scale(1)', opacity: 1, visibility: 'visible' },
-  exited: { transform: 'scale(0.95)', opacity: 0, visibility: 'hidden' }
-}
-
-export default function Navigation({ pages }) {
-  const container = useRef(null)
-  const router = useRouter()
-  const [mobileNavOpen, setMobileNavOpen] = useState(false)
-
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (!container?.current?.contains(event.target)) {
-        if (!mobileNavOpen) return
-
-        setMobileNavOpen(false)
-      }
-    }
-
-    window.addEventListener('click', handleOutsideClick)
-
-    return () => window.removeEventListener('click', handleOutsideClick)
-  }, [mobileNavOpen, container])
-
-  useEffect(() => {
-    const handleEscape = (event) => {
-      if (!mobileNavOpen) return
-
-      if (event.key === 'Escape') {
-        setMobileNavOpen(false)
-      }
-    }
-
-    document.addEventListener('keyup', handleEscape)
-
-    return () => document.removeEventListener('keyup', handleEscape)
-  }, [mobileNavOpen])
-
-  useEffect(() => {
-    const handleRouteChange = () => setMobileNavOpen(false)
-
-    router.events.on('routeChangeStart', handleRouteChange)
-
-    return () => router.events.off('routeChangeStart', handleRouteChange)
-  }, [router.events])
+export default function Navigation() {
+  const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box ref={container} pos="relative" bg="white" boxShadow="base">
-      <Transition in={mobileNavOpen} timeout={150}>
-        {(state) => (
-          <Box
-            borderRadius="lg"
-            boxShadow="lg"
-            bg="white"
-            m={2}
-            border="1px solid rgba(0, 0, 0, 0.05)"
-            pos="absolute"
-            top="0"
-            right="0"
-            left="0"
-            zIndex="docked"
-            transition="all 150ms cubic-bezier(0.4, 0, 0.2, 1)"
-            transformOrigin="top right"
-            style={{
-              ...defaultStyle,
-              ...transitionStyles[state]
+    <Box>
+      <Flex
+        bg={useColorModeValue("white", "palette.black")}
+        color={useColorModeValue("palette.black", "white")}
+        minH={"60px"}
+        py={{ base: 2 }}
+        px={{ base: 4 }}
+        borderBottom={1}
+        borderStyle={"solid"}
+        borderColor={useColorModeValue("gray.200", "gray.900")}
+        align={"center"}
+      >
+        <Flex
+          flex={{ base: 1, md: "auto" }}
+          ml={{ base: -2 }}
+          display={{ base: "flex", md: "none" }}
+        >
+          <IconButton
+            onClick={onToggle}
+            icon={
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            }
+            variant={"ghost"}
+            aria-label={"Toggle Navigation"}
+          />
+        </Flex>
+        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "left" }}>
+        <Link href="/">
+          <Text
+            textAlign={useBreakpointValue({ base: "center", md: "left" })}
+            fontFamily={"heading"}
+            color={useColorModeValue("palette.black", "white")}
+          >
+            <img
+              src={colorMode === "light" ? logowhite.src : logoblack.src}
+              alt='Logo'
+              width={200}
+            />
+          </Text>
+          </Link>
+            <Flex display={{ base: "none", md: "flex" }} marginLeft={"auto"} marginRight={"auto"}>
+              <DesktopNav />
+            </Flex>
+        </Flex>
+
+        <Stack
+          flex={{ base: 1, md: 0 }}
+          justify={"flex-end"}
+          direction={"row"}
+          spacing={6}
+        >
+          <Button onClick={toggleColorMode}>
+            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Button>
+          <Button
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"palette.black"}
+            bg={"palette.brown"}
+            href={"#"}
+            _hover={{
+              bg: "palette.black",
+              color: "palette.brown"
             }}
           >
-            <Box pt={5} pb={6} px={5}>
-              <Flex alignItems="center" justifyContent="space-between">
-                <div>
-                  <Link href="/">
-                    <a>
-                      <VisuallyHidden>Hygraph</VisuallyHidden>
-                      <Box as={MarkSVG} h={8} w="auto" color="indigo.600" />
-                    </a>
-                  </Link>
-                </div>
-                <Box mr={-2}>
-                  <Button
-                    type="button"
-                    bg="white"
-                    borderRadius="md"
-                    p={2}
-                    display="inline-flex"
-                    color="gray.400"
-                    _hover={{
-                      color: 'gray.500',
-                      bg: 'gray.100'
-                    }}
-                    onClick={() => setMobileNavOpen(false)}
-                  >
-                    <VisuallyHidden>Close menu</VisuallyHidden>
-                    <Box as={XIcon} w={6} h={6} aria-hidden="true" />
-                  </Button>
-                </Box>
-              </Flex>
-              <Box mt={6}>
-                {pages && pages.length && (
-                  <Grid as="nav" gridRowGap={8}>
-                    {pages.map((page) => {
-                      const isActive = router.asPath.startsWith(`/${page.slug}`)
-
-                      return (
-                        <Link key={page.id} href={`/${page.slug}`} passHref>
-                          <ChakraLink
-                            m={-3}
-                            p={3}
-                            display="flex"
-                            alignItems="center"
-                            borderRadius="md"
-                            color={isActive ? 'indigo.600' : 'inherit'}
-                            _hover={{
-                              bg: 'gray.50'
-                            }}
-                          >
-                            <Text
-                              as="span"
-                              ml={3}
-                              fontSize="md"
-                              fontWeight="medium"
-                              color="gray.900"
-                            >
-                              {page.navigationLabel ||
-                                page.slug.charAt(0).toUpperCase() +
-                                  page.slug.slice(1)}
-                            </Text>
-                          </ChakraLink>
-                        </Link>
-                      )
-                    })}
-                  </Grid>
-                )}
-              </Box>
-            </Box>
-          </Box>
-        )}
-      </Transition>
-
-      <Box maxW="7xl" mx="auto" px={[4, 6]}>
-        <Stack
-          display="flex"
-          justifyContent={['space-between', null, 'flex-start']}
-          alignItems="center"
-          py={6}
-          direction="row"
-          spacing={{ md: 10 }}
-        >
-          <Flex w={{ lg: 0 }} flex={{ lg: '1 1 0' }}>
-            <Link href="/">
-              <a>
-                <VisuallyHidden>Hygraph</VisuallyHidden>
-                <Box as={LogoSVG} h={10} color="indigo.600" w="auto" />
-              </a>
-            </Link>
-          </Flex>
-          <Box mr={-2} my={-2} display={{ md: 'none' }}>
-            <Button
-              type="button"
-              bg="white"
-              borderRadius="md"
-              p={2}
-              display="inline-flex"
-              color="gray.400"
-              _hover={{
-                color: 'gray.500',
-                bg: 'gray.100'
-              }}
-              onClick={() => setMobileNavOpen(true)}
-            >
-              <VisuallyHidden>Open menu</VisuallyHidden>
-              <Box as={MenuIcon} w={6} h={6} aria-hidden="true" />
-            </Button>
-          </Box>
-          {pages && pages.length && (
-            <Stack
-              as="nav"
-              display={['none', null, 'flex']}
-              direction="row"
-              spacing={10}
-            >
-              {pages.map((page) => {
-                const isActive = router.asPath.startsWith(`/${page.slug}`)
-
-                return (
-                  <Link key={page.id} href={`/${page.slug}`} passHref>
-                    <ChakraLink
-                      fontSize="md"
-                      fontWeight="medium"
-                      color={isActive ? 'indigo.600' : 'gray.500'}
-                      _hover={{
-                        color: 'gray.900'
-                      }}
-                    >
-                      {page.navigationLabel ||
-                        page.slug.charAt(0).toUpperCase() + page.slug.slice(1)}
-                    </ChakraLink>
-                  </Link>
-                )
-              })}
-            </Stack>
-          )}
+            Resume
+          </Button>
         </Stack>
-      </Box>
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav />
+      </Collapse>
     </Box>
-  )
+  );
 }
+
+const DesktopNav = () => {
+  const linkColor = useColorModeValue("gray.600", "palette.black");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+
+  return (
+    <Stack direction={"row"} spacing={4}>
+      {NAV_ITEMS.map((navItem) => (
+        <Box key={navItem.label}>
+          <Center>
+            <Popover trigger={"hover"} placement={"bottom-start"}>
+              <PopoverTrigger>
+                <Link
+                  p={2}
+                  href={navItem.href ?? "#"}
+                  fontSize={"sm"}
+                  fontWeight={500}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: "none",
+                    color: linkHoverColor,
+                  }}
+                >
+                  {navItem.label}
+                </Link>
+              </PopoverTrigger>
+
+              {navItem.children && (
+                <PopoverContent
+                  border={0}
+                  boxShadow={"xl"}
+                  bg={popoverContentBgColor}
+                  p={4}
+                  rounded={"xl"}
+                  minW={"sm"}
+                >
+                  <Stack>
+                    {navItem.children.map((child) => (
+                      <DesktopSubNav key={child.label} {...child} />
+                    ))}
+                  </Stack>
+                </PopoverContent>
+              )}
+            </Popover>
+          </Center>
+        </Box>
+      ))}
+    </Stack>
+  );
+};
+
+const DesktopSubNav = ({ label, href, subLabel }) => {
+  return (
+    <Link
+      href={href}
+      role={"group"}
+      display={"block"}
+      p={2}
+      rounded={"md"}
+      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+    >
+      <Stack direction={"row"} align={"center"}>
+        <Box>
+          <Text
+            transition={"all .3s ease"}
+            _groupHover={{ color: "pink.500" }}
+            fontWeight={500}
+          >
+            {label}
+          </Text>
+          <Text fontSize={"sm"}>{subLabel}</Text>
+        </Box>
+        <Flex
+          transition={"all .3s ease"}
+          transform={"translateX(-10px)"}
+          opacity={0}
+          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+          justify={"flex-end"}
+          align={"center"}
+          flex={1}
+        >
+          <Icon color={"pink.500"} w={5} h={5} as={ChevronRightIcon} />
+        </Flex>
+      </Stack>
+    </Link>
+  );
+};
+
+const MobileNav = () => {
+  return (
+    <Stack
+      bg={useColorModeValue("white", "gray.800")}
+      p={4}
+      display={{ md: "none" }}
+    >
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} {...navItem} />
+      ))}
+    </Stack>
+  );
+};
+
+const MobileNavItem = ({ label, children, href }) => {
+  const { isOpen, onToggle } = useDisclosure();
+
+  return (
+    <Stack spacing={4} onClick={children && onToggle}>
+      <Flex
+        py={2}
+        as={Link}
+        href={href ?? "#"}
+        justify={"space-between"}
+        align={"center"}
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
+        <Text
+          fontWeight={600}
+          color={useColorModeValue("gray.600", "gray.200")}
+        >
+          {label}
+        </Text>
+        {children && (
+          <Icon
+            as={ChevronDownIcon}
+            transition={"all .25s ease-in-out"}
+            transform={isOpen ? "rotate(180deg)" : ""}
+            w={6}
+            h={6}
+          />
+        )}
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={"solid"}
+          borderColor={useColorModeValue("gray.200", "gray.700")}
+          align={"start"}
+        >
+          {children &&
+            children.map((child) => (
+              <Link key={child.label} py={2} href={child.href}>
+                {child.label}
+              </Link>
+            ))}
+        </Stack>
+      </Collapse>
+    </Stack>
+  );
+};
+
+
+

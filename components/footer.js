@@ -1,195 +1,179 @@
 import {
-  VisuallyHidden,
-  Link as ChakraLink,
-  Text,
-  Stack,
   Box,
-  Grid,
-  Heading,
+  chakra,
+  Container,
+  Link,
+  SimpleGrid,
+  Stack,
+  Text,
+  VisuallyHidden,
   FormLabel,
-  Select
-} from '@chakra-ui/react'
-import Link from 'next/link'
+  Select,
+  Input,
+  IconButton,
+  useColorModeValue,
+  useColorMode,
+} from '@chakra-ui/react';
 import { useRouter } from 'next/router'
-
-import { GithubIcon, LinkedInIcon, SlackIcon, TwitterIcon } from '@/icons'
+import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { BiMailSend } from 'react-icons/bi';
+import { logoblack, logowhite } from '../assets';
 import { locales } from '@/lib/_locales'
 
-function GridColumnHeading({ children }) {
-  return (
-    <Heading
-      as="h3"
-      fontSize="sm"
-      fontWeight="semibold"
-      color="gray.400"
-      letterSpacing="wider"
-      textTransform="uppercase"
-    >
-      {children}
-    </Heading>
-  )
-}
 
-function GridColumn({ links, title }) {
-  return (
-    <div>
-      <GridColumnHeading>{title}</GridColumnHeading>
 
-      <Stack as="ul" mt={4} spacing={4}>
-        {links.map((link) => (
-          <li key={link.id}>
-            <Link href={`/${link.slug}`} passHref>
-              <ChakraLink
-                color="gray.300"
-                _hover={{
-                  color: 'white'
-                }}
-              >
-                {link.navigationLabel ||
-                  link.slug.charAt(0).toUpperCase() + link.slug.slice(1)}
-              </ChakraLink>
-            </Link>
-          </li>
-        ))}
-      </Stack>
-    </div>
-  )
-}
-
-function SocialMediaLink({ href, title, icon }) {
+const SocialButton = ({
+  children,
+  label,
+  href }) => {
   return (
-    <ChakraLink
+    <chakra.button
+      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      rounded={'full'}
+      w={8}
+      h={8}
+      cursor={'pointer'}
+      as={'a'}
       href={href}
-      isExternal
-      color="gray.400"
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
       _hover={{
-        color: 'gray.300'
-      }}
-    >
-      <VisuallyHidden>{title}</VisuallyHidden>
-      <Box as={icon} w={6} h={6} />
-    </ChakraLink>
-  )
-}
+        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+      }}>
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
+  );
+};
 
-export default function Footer({ primaryLinks, secondaryLinks }) {
+const ListHeader = ({ children }) => {
+  return (
+    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+      {children}
+    </Text>
+  );
+};
+
+export default function LargeWithNewsletter() {
   const router = useRouter()
-
   const activeLocale = locales.find((locale) => locale.value === router.locale)
-
   const setLocale = (event) => {
     router.push(router.asPath, router.asPath, { locale: event.target.value })
   }
+  const { colorMode } = useColorMode();
 
   return (
-    <Box as="footer" bg="gray.800" aria-labelledby="footerHeading">
-      <VisuallyHidden as="h2" id="footerHeading">
-        Footer
-      </VisuallyHidden>
+    <Box
+      bg={useColorModeValue('gray.50', 'gray.900')}
+      color={useColorModeValue('gray.700', 'gray.200')}>
+      <Container as={Stack} maxW={'6xl'} py={10}>
+        <SimpleGrid
+          templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+          spacing={8}>
+          <Stack spacing={6}>
+            <Box>
+              <img
+                src={colorMode === "light" ? logowhite.src : logoblack.src}
+                alt='Logo'
+                width={200}
+              />
+            </Box>
+            <Text fontSize={'sm'}>
+              © 2022 DataScienceGal. All rights reserved
+            </Text>
+            <Stack direction={'row'} spacing={6}>
+              <SocialButton label={'Twitter'} href={'#'}>
+                <FaTwitter />
+              </SocialButton>
+              <SocialButton label={'Linkedin'} href={'#'}>
+                <FaLinkedin />
+              </SocialButton>
+              <SocialButton label={'Instagram'} href={'#'}>
+                <FaInstagram />
+              </SocialButton>
+            </Stack>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>Quick Links</ListHeader>
+            <Link href={'#'}>About us</Link>
+            <Link href={'#'}>BloomTech Projects</Link>
+            <Link href={'#'}>Freelance Work</Link>
+            <Link href={'#'}>Blog</Link>
+            <Link href={'#'}>Contact</Link>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>Hire me</ListHeader>
+            <Link href={'#'}>Data Visualization</Link>
+            <Link href={'#'}>Data Wrangling</Link>
+            <Link href={'#'}>Marketing Analyics</Link>
+            <Link href={'#'}>Data Cleaning</Link>
+            <Link href={'#'}>Consulting</Link>
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>Stay up to date</ListHeader>
+            <Stack direction={'row'}>
+              <Input
+                placeholder={'Your email address'}
+                bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+                border={0}
+                _focus={{
+                  bg: 'whiteAlpha.300',
+                }}
+              />
+              <IconButton
+                bg={useColorModeValue('palette.brown', 'palette.brown')}
+                color={useColorModeValue('white', 'palette.brown')}
+                _hover={{
+                  bg: 'palette.black',
+                }}
+                aria-label="Subscribe"
+                icon={<BiMailSend />}
+              />
+            </Stack>
+            <Box mt={{ base: 12, xl: 0 }}>
+              <ListHeader>Language</ListHeader>
 
-      <Box maxW="7xl" mx="auto" py={{ base: 12, lg: 16 }} px={[4, 6, null, 8]}>
-        <Box
-          pb={8}
-          display={{ xl: 'grid' }}
-          gridTemplateColumns={{ xl: 'repeat(5, 1fr)' }}
-          gridGap={{ xl: 8 }}
-        >
-          <Grid
-            gridTemplateColumns="repeat(2, 1fr)"
-            gridGap={8}
-            gridColumn={{ xl: 'span 4 / span 4' }}
-          >
-            <GridColumn
-              links={primaryLinks.length && primaryLinks}
-              title="Primary"
-            />
+              <Box as="form" mt={4} maxW={{ sm: 'xs' }}>
+                <Box as="fieldset" w="full">
+                  <VisuallyHidden as={FormLabel} htmlFor="language">
+                    Language
+                  </VisuallyHidden>
 
-            <GridColumn
-              links={secondaryLinks.length && secondaryLinks}
-              title="Secondary"
-            />
-          </Grid>
-
-          <Box mt={{ base: 12, xl: 0 }}>
-            <GridColumnHeading>Language</GridColumnHeading>
-
-            <Box as="form" mt={4} maxW={{ sm: 'xs' }}>
-              <Box as="fieldset" w="full">
-                <VisuallyHidden as={FormLabel} htmlFor="language">
-                  Language
-                </VisuallyHidden>
-
-                <Box position="relative">
-                  <Select
-                    id="language"
-                    name="language"
-                    color="white"
-                    bg="gray.700"
-                    borderColor="transparent"
-                    fontSize={{ sm: 'sm' }}
-                    value={activeLocale.value}
-                    onChange={setLocale}
-                  >
-                    {locales.map((locale) => (
-                      <Box
-                        as="option"
-                        bg="#374151!important"
-                        color="white"
-                        key={locale.value}
-                        value={locale.value}
-                      >
-                        {locale.label}
-                      </Box>
-                    ))}
-                  </Select>
+                  <Box position="relative">
+                    <Select
+                      id="language"
+                      name="language"
+                      color="white"
+                      bg="palette.black"
+                      borderColor="transparent"
+                      fontSize={{ sm: 'sm' }}
+                      value={activeLocale.value}
+                      onChange={setLocale}
+                    >
+                      {locales.map((locale) => (
+                        <Box
+                          as="option"
+                          bg="#374151!important"
+                          color="white"
+                          key={locale.value}
+                          value={locale.value}
+                        >
+                          {locale.label}
+                        </Box>
+                      ))}
+                    </Select>
+                  </Box>
                 </Box>
               </Box>
             </Box>
-          </Box>
-        </Box>
-
-        <Box
-          mt={7}
-          pt={8}
-          borderTopWidth="1px"
-          borderColor="gray.700"
-          display={{ md: 'flex' }}
-          alignItems={{ md: 'center' }}
-          justifyContent={{ md: 'space-between' }}
-        >
-          <Stack direction="row" display="flex" spacing={6} order={{ md: 2 }}>
-            <SocialMediaLink
-              title="LinkedIn"
-              icon={LinkedInIcon}
-              href="https://linkedin.com/company/hygraph"
-            />
-            <SocialMediaLink
-              title="Slack"
-              icon={SlackIcon}
-              href="https://slack.hygraph.com"
-            />
-            <SocialMediaLink
-              title="Twitter"
-              icon={TwitterIcon}
-              href="https://twitter.com/Hygraphcom"
-            />
-            <SocialMediaLink
-              title="GitHub"
-              icon={GithubIcon}
-              href="https://github.com/Hygraph/reference-nextjs-marketing"
-            />
           </Stack>
-
-          <Text
-            mt={[8, null, 0]}
-            fontSize="md"
-            color="gray.400"
-            order={{ md: 1 }}
-          >
-            &copy; {new Date().getFullYear()} GraphCMS GmbH All rights reserved.
-          </Text>
-        </Box>
-      </Box>
+        </SimpleGrid>
+      </Container>
     </Box>
-  )
+  );
 }
+
+
+
