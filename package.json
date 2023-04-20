@@ -6,7 +6,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
@@ -14,6 +16,7 @@
     "@emotion/react": "11.8.2",
     "@emotion/styled": "11.8.1",
     "framer-motion": "6.2.9",
+    "gh-pages": "^5.0.0",
     "graphql": "16.3.0",
     "graphql-request": "4.2.0",
     "he": "1.2.0",
