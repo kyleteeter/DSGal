@@ -1,10 +1,10 @@
 // const { locales } = require('./lib/_locales')
 
 module.exports = {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en']
-  },
+  // i18n: {
+  //   locales: ['en', 'es'],
+  //   defaultLocale: 'en',
+  // },
   images: {
     domains: ['media.graphassets.com']
   },
