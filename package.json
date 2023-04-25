@@ -2,11 +2,13 @@
   "name": "reference-marketing-website",
   "private": true,
   "license": "MIT",
-  "homepage": "https://test.kyle-teeter.com",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d next build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
