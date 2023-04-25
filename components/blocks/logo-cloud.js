@@ -7,9 +7,10 @@ const imageDefaultStyles = {
 
 export default function LogoCloud({ companies }) {
   if (!(companies || companies.length)) return null
+  const bgColor = useColorModeValue('white', 'white')
 
   return (
-    <Box bg={useColorModeValue('white', 'white')} mb={40}>
+    <Box bg={bgColor} mb={40}>
       <Box maxW="7xl" mx="auto" py={[6, 1]} px={[6, 6, null, 8]}>
 
         <Box display="flow-root" mt={{ base: 8, lg: 10 }}>

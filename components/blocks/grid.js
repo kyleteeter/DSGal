@@ -19,9 +19,12 @@ export default function Grid({
 
   const stackLayout = layout === 'STACK'
   const splitLayout = layout === 'SPLIT'
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const subtitleColor = useColorModeValue('gray.500', 'gray.400')
+  const textColor = useColorModeValue('gray.800', 'white')
 
   return (
-    <Box overflow="hidden" bg={useColorModeValue('white', 'gray.800')}>
+    <Box overflow="hidden" bg={bgColor}>
       <Box pos="relative" maxW="7xl" mx="auto" py={12} px={[4, 6, null, 8]}>
         {splitLayout && (
           <Box
@@ -64,7 +67,7 @@ export default function Grid({
               fontWeight="extrabold"
               letterSpacing="tight"
               lineHeight="9"
-              color={useColorModeValue('gray.800', 'white')}
+              color={textColor}
             >
               {gridTitle}
             </Text>
@@ -74,7 +77,7 @@ export default function Grid({
                 mt={4}
                 maxW="2xl"
                 fontSize="xl"
-                color={useColorModeValue('gray.500', 'gray.400')}
+                color={subtitleColor}
                 mx={{ lg: 'auto' }}
               >
                 <MDXRemote {...gridSubtitle.mdx} />

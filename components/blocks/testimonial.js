@@ -7,6 +7,8 @@ import { SlashIcon } from '@/icons'
 
 export default function Testimonial({ content, person }) {
   if (!person) return null
+  const textColor = useColorModeValue('gray.900', 'white')
+  const roleColor = useColorModeValue('gray.500', 'gray.400')
 
   return (
     <Box as="section" py={[12, null, 20, 24]} bg="gray.90" overflow="hidden">
@@ -39,7 +41,7 @@ export default function Testimonial({ content, person }) {
               fontSize="2xl"
               lineHeight="9"
               fontWeight="medium"
-              color={useColorModeValue('gray.900', 'white')}
+              color={textColor}
             >
               <MDXRemote {...content.mdx} />
             </Box>
@@ -66,7 +68,7 @@ export default function Testimonial({ content, person }) {
                   display={{ md: 'flex' }}
                   alignItems={{ md: 'center' }}
                 >
-                  <Box fontWeight="medium" color={useColorModeValue('gray.900', 'white')}>
+                  <Box fontWeight="medium" color={textColor}>
                     {person.name}
                   </Box>
 
@@ -80,7 +82,7 @@ export default function Testimonial({ content, person }) {
                         w={5}
                         color="pink.500"
                       />
-                      <Box fontWeight="medium" color={useColorModeValue('gray.500', 'gray.400')}>
+                      <Box fontWeight="medium" color={roleColor}>
                         {person.role}, {person.company.name}
                       </Box>
                     </>

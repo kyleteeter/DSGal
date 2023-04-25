@@ -9,8 +9,15 @@ export default function StatSection({
 }) {
   if (!(columns || columns.length)) return null
 
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const headerColor = useColorModeValue('gray.900', 'white')
+  const sectionbgColor = useColorModeValue('gray.50', 'gray.800')
+  const columnColor = useColorModeValue('white', 'gray.600')
+  const columnLabel = useColorModeValue('gray.500', 'white')
+  const borderColor = useColorModeValue('gray.100', 'white')
+
   return (
-    <Box bg={useColorModeValue('white', 'gray.800')} pt={[12, 16]}>
+    <Box bg={bgColor} pt={[12, 16]}>
       {(gridTitle || gridSubtitle) && (
         <Box maxW="7xl" mx="auto" px={[4, 6, null, 8]}>
           <Box maxW="4xl" mx="auto" textAlign="center">
@@ -19,7 +26,7 @@ export default function StatSection({
                 as="h2"
                 fontSize={['3xl', '4xl']}
                 fontWeight="extrabold"
-                color={useColorModeValue('gray.900', 'white')}
+                color={headerColor}
               >
                 {gridTitle}
               </Heading>
@@ -32,15 +39,15 @@ export default function StatSection({
           </Box>
         </Box>
       )}
-      <Box mt={10} pb={[12, 16]} bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Box mt={10} pb={[12, 16]} bg={sectionbgColor}>
         <Box pos="relative">
-          <Box pos="absolute" inset="0" h="50%" bg={useColorModeValue('white', 'gray.800')}></Box>
+          {/* <Box pos="absolute" inset="0" h="50%" bg={useColorModeValue('white', 'gray.800')}></Box> */}
           <Box pos="relative" maxW="7xl" mx="auto" px={[4, 6, null, 8]}>
             <Box maxW="4xl" mx="auto">
               <Box
                 as="dl"
                 borderRadius="lg"
-                bg={useColorModeValue('white', 'gray.600')}
+                bg={columnColor}
                 boxShadow="lg"
                 display={{ sm: 'grid' }}
                 gridTemplateColumns={{ sm: 'repeat(3, 1fr)' }}
@@ -55,7 +62,7 @@ export default function StatSection({
                     <Flex
                       key={column.id}
                       flexDirection="column"
-                      borderColor={useColorModeValue('gray.100', 'white')}
+                      borderColor={borderColor}
                       p={6}
                       textAlign="center"
                       borderBottomWidth={['1px', !hasColumn ? '1px' : '0px']}
@@ -74,7 +81,7 @@ export default function StatSection({
                         fontSize="lg"
                         lineHeight="6"
                         fontWeight="medium"
-                        color={useColorModeValue('gray.500', 'white')}
+                        color={columnLabel}
                       >
                         {column.label}
                       </Box>
