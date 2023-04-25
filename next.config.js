@@ -5,10 +5,6 @@ module.exports = {
   //   defaultLocale: locales.find((locale) => locale.default).value,
   //   locales: locales.map((locale) => locale.value)
   // },
-  i18n: {
-    locales: ['en', 'es'],
-    defaultLocale: 'en',
-  },
   images: {
     domains: ['media.graphassets.com']
   },
