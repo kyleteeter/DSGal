@@ -1,9 +1,8 @@
-const { locales } = require('./lib/_locales')
+// const { locales } = require('./lib/_locales')
 
 module.exports = {
   i18n: {
-    defaultLocale: locales.find((locale) => locale.default).value,
-    locales: locales.map((locale) => locale.value)
+    defaultLocale: 'en',
   },
   images: {
     domains: ['media.graphassets.com']
