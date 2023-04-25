@@ -280,4 +280,5 @@ export async function getStaticPaths({ locales }) {
   }
 }
 
+
 BlogPost.getLayout = getContentLayout
