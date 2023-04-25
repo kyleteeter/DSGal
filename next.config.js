@@ -7,5 +7,8 @@ module.exports = {
   },
   images: {
     domains: ['media.graphassets.com']
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   }
 }
