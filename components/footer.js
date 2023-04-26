@@ -132,7 +132,7 @@ export default function LargeWithNewsletter() {
                 icon={<BiMailSend />}
               />
             </Stack>
-            <Box mt={{ base: 12, xl: 0 }}>
+            {/* <Box mt={{ base: 12, xl: 0 }}>
               <ListHeader>Language</ListHeader>
 
               <Box as="form" mt={4} maxW={{ sm: 'xs' }}>
@@ -149,7 +149,7 @@ export default function LargeWithNewsletter() {
                       bg="palette.black"
                       borderColor="transparent"
                       fontSize={{ sm: 'sm' }}
-                      value={activeLocale.value}
+                      // value={activeLocale.value}
                       onChange={setLocale}
                     >
                       {locales.map((locale) => (
@@ -167,7 +167,7 @@ export default function LargeWithNewsletter() {
                   </Box>
                 </Box>
               </Box>
-            </Box>
+            </Box> */}
           </Stack>
         </SimpleGrid>
       </Container>
