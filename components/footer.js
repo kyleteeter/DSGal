@@ -19,6 +19,7 @@ import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 import { logoblack, logowhite } from '../assets';
 import { locales } from '@/lib/_locales'
+import Image from 'next/image';
 
 
 
@@ -74,7 +75,7 @@ export default function LargeWithNewsletter() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <img
+              <Image
                 src={colorMode === "light" ? logowhite.src : logoblack.src}
                 alt='Logo'
                 width={200}
