@@ -1,7 +1,6 @@
-module.exports = {
-  images: {
-    domains: ['media.graphassets.com']
-  },
+const withImages = require('next-images');
+
+module.exports = withImages({
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
@@ -10,5 +9,8 @@ module.exports = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }
-}
+  },
+  images: {
+    domains: ['media.graphassets.com'],
+  },
+});
