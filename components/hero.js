@@ -10,7 +10,7 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
-import { jiannina } from '../assets'
+import { jiannina } from '../assets/jiannina.jpeg'
 import Image from 'next/image'
 
 import Button from '@/components/button'
