@@ -15,10 +15,9 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router'
-import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
-import { logoblack, logowhite } from '../assets';
-import { locales } from '@/lib/_locales'
+// import { logoblack, logowhite } from '../assets';
 import Image from 'next/image';
 
 
@@ -75,11 +74,11 @@ export default function LargeWithNewsletter() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Image
+              {/* <Image
                 src={colorMode === "light" ? logowhite.src : logoblack.src}
                 alt='Logo'
                 width={200}
-              />
+              /> */}
             </Box>
             <Text fontSize={'sm'}>
               © 2022 DataScienceGal. All rights reserved

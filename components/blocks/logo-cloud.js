@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Flex, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const imageDefaultStyles = {

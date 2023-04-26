@@ -10,7 +10,7 @@ import {
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
-import { jiannina } from '../assets/jiannina.jpeg'
+import { jiannina } from '../assets/index'
 import Image from 'next/image'
 
 import Button from '@/components/button'
@@ -127,15 +127,15 @@ export default function Hero({ buttons, image, navigation, page }) {
                   top={'50%'}
                   transform={'translateX(-50%) translateY(-50%)'}
                 />
-                <Image
+                {/* <Image
                   alt={'Hero Image'}
-                  // fit={'cover'}
+                  fit={'cover'}
                   align={'center'}
                   w={'100%'}
                   h={'auto'}
                   src={jiannina.src}
                   style={{ objectPosition: 'top' }}
-                />
+                /> */}
               </Box>
             </Flex>
           </Stack>
