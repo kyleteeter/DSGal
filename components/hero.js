@@ -6,12 +6,12 @@ import {
   Heading,
   createIcon,
   IconButton,
-  Image,
   Icon,
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
 import { jiannina } from '../assets'
+import Image from 'next/image'
 
 import Button from '@/components/button'
 
@@ -129,10 +129,10 @@ export default function Hero({ buttons, image, navigation, page }) {
                 />
                 <Image
                   alt={'Hero Image'}
-                  fit={'cover'}
+                  // fit={'cover'}
                   align={'center'}
                   w={'100%'}
-                  h={'100%'}
+                  h={'auto'}
                   src={jiannina.src}
                   style={{ objectPosition: 'top' }}
                 />
