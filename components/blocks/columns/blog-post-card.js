@@ -27,6 +27,7 @@ export default function BlogPostCard({
             width={coverImage.width}
             height={coverImage.height}
             objectFit="cover"
+            loader="custom"
           />
         )}
       </Box>

@@ -31,6 +31,7 @@ export default function Testimonial({ content, person }) {
               src={person.company.logo.url}
               alt={person.company.logo.title}
               layout="fill"
+              loader="custom"
             />
           </Box> */}
           <Box as="blockquote" mt={10}>

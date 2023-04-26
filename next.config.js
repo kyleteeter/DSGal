@@ -1,11 +1,12 @@
-// const { locales } = require('./lib/_locales')
-
 module.exports = {
-  // i18n: {
-  //   defaultLocale: 'en',
-  // },
   images: {
     domains: ['media.graphassets.com']
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
+    return config;
   },
   eslint: {
     ignoreDuringBuilds: true,
