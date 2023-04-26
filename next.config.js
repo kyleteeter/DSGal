@@ -2,7 +2,7 @@ const path = require('path');
 const nextImages = require('next-images');
 const urlLoader = require('url-loader');
 
-module.exports = withImages({
+module.exports = nextImages({
   webpack(config, options) {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|svg)$/i,
