@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote'
 
 import { DotsSVG } from '@/svgs'
 import { SlashIcon } from '@/icons'
+import imageLoader from 'next.config'
 
 export default function Testimonial({ content, person }) {
   if (!person) return null
@@ -59,6 +60,7 @@ export default function Testimonial({ content, person }) {
                       alt={`${person.name} photo`}
                       src={person.photo.url}
                       layout="fill"
+                      loader={imageLoader}
                     />
                   </Box>
                 </Box>

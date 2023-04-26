@@ -18,6 +18,7 @@ import { getContentLayout } from '@/layout'
 import { hygraphClient } from '@/lib/_client'
 import { parsePostData } from '@/utils/_parsePostData'
 import SEO from '@/components/seo'
+import imageLoader from 'next.config'
 
 export default function BlogPost({ nextPost, post, previousPost }) {
   const authorNameStyle = useColorModeValue('gray.900', 'gray.300')
@@ -93,6 +94,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                         alt={author.name}
                         title={author.name}
                         layout="fill"
+                        loader={imageLoader}
                       />
                     </Box>
                     <Box
@@ -127,6 +129,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   height={post.coverImage.height}
                   width={post.coverImage.width}
                   objectFit="cover"
+                  loader={imageLoader}
                 />
               </Box>
             )}

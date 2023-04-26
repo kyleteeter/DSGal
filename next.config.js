@@ -1,31 +1,15 @@
-const path = require('path');
 const nextImages = require('next-images');
-const urlLoader = require('url-loader');
 
 module.exports = nextImages({
-  webpack(config, options) {
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 8192, // Convert images < 8kb to base64 strings
-            fallback: 'file-loader',
-            publicPath: `/_next/static/images/`, // Path to image folder
-            outputPath: `${options.isServer ? '../' : ''}static/images/`, // Path to image folder
-            name: '[name].[hash].[ext]', // File name pattern
-          },
-        },
-      ],
-    });
-
-    return config;
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
     domains: ['media.graphassets.com'],
+    loader: 'custom',
   },
 });
+
+export default function imageLoader({ src, width, quality }) {
+  return `https://media.graphassets.com/${src}?w=${width}&q=${quality || 75}`
+}
