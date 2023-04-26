@@ -58,10 +58,10 @@ const ListHeader = ({ children }) => {
 
 export default function LargeWithNewsletter() {
   const router = useRouter()
-  const activeLocale = locales.find((locale) => locale.value === router.locale)
-  const setLocale = (event) => {
-    router.push(router.asPath, router.asPath, { locale: event.target.value })
-  }
+  // const activeLocale = locales.find((locale) => locale.value === router.locale)
+  // const setLocale = (event) => {
+  //   router.push(router.asPath, router.asPath, { locale: event.target.value })
+  // }
   const { colorMode } = useColorMode();
 
   return (

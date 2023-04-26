@@ -10,12 +10,11 @@ export default function Page({ page }) {
   return <Wrapper {...page} />
 }
 
-export async function getStaticProps({ locale, params, preview = false }) {
+export async function getStaticProps({ params, preview = false }) {
   const client = hygraphClient(preview)
 
   const { page } = await client.request(pageQuery, {
-    locale,
-    slug: params.slug
+   slug: params.slug
   })
 
   if (!page) {
@@ -35,7 +34,7 @@ export async function getStaticProps({ locale, params, preview = false }) {
   }
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths() {
   let paths = []
 
   const client = hygraphClient()
@@ -48,12 +47,12 @@ export async function getStaticPaths({ locales }) {
     }
   `)
 
-  for (const locale of locales) {
+  // for (const locale of locales) {
     paths = [
       ...paths,
-      ...pages.map((page) => ({ params: { slug: page.slug }, locale }))
+      ...pages.map((page) => ({ params: { slug: page.slug } }))
     ]
-  }
+  // }
 
   return {
     paths,

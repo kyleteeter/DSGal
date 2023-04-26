@@ -221,12 +221,11 @@ export default function BlogPost({ nextPost, post, previousPost }) {
   )
 }
 
-export async function getStaticProps({ locale, params, preview = false }) {
+export async function getStaticProps({ params, preview = false }) {
   const client = hygraphClient(preview)
 
   const { allPosts, page, post } = await client.request(blogPostQuery, {
-    locale,
-    slug: params.slug
+   slug: params.slug
   })
 
   if (!post) {
@@ -254,7 +253,7 @@ export async function getStaticProps({ locale, params, preview = false }) {
   }
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths() {
   let paths = []
 
   const client = hygraphClient()
@@ -267,12 +266,12 @@ export async function getStaticPaths({ locales }) {
     }
   `)
 
-  for (const locale of locales) {
+  // for (const locale of locales) {
     paths = [
       ...paths,
-      ...posts.map((post) => ({ params: { slug: post.slug }, locale }))
+      ...posts.map((post) => ({ params: { slug: post.slug } }))
     ]
-  }
+  // }
 
   return {
     paths,
