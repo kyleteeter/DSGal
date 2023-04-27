@@ -23,7 +23,6 @@ export default function PersonCard({ name, photo, role }) {
               alt={name}
               title={name}
               layout="fill"
-              loader={imageLoader}
             />
           ) : (
             <Box as={AvatarIcon} h="full" w="full" color="gray.300" />

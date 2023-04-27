@@ -94,7 +94,6 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                         alt={author.name}
                         title={author.name}
                         layout="fill"
-                        loader={imageLoader}
                       />
                     </Box>
                     <Box
@@ -129,7 +128,6 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   height={post.coverImage.height}
                   width={post.coverImage.width}
                   objectFit="cover"
-                  loader={imageLoader}
                 />
               </Box>
             )}

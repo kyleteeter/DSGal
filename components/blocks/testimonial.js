@@ -60,7 +60,6 @@ export default function Testimonial({ content, person }) {
                       alt={`${person.name} photo`}
                       src={person.photo.url}
                       layout="fill"
-                      loader={imageLoader}
                     />
                   </Box>
                 </Box>

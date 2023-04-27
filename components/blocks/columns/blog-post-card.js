@@ -28,7 +28,6 @@ export default function BlogPostCard({
             width={coverImage.width}
             height={coverImage.height}
             objectFit="cover"
-            loader={imageLoader}
           />
         )}
       </Box>
@@ -87,7 +86,6 @@ export default function BlogPostCard({
                     alt={author.name}
                     title={author.name}
                     layout="fill"
-                    loader={imageLoader}
                   />
                 </Box>
               )

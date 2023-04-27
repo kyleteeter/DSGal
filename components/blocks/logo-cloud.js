@@ -38,7 +38,6 @@ export default function LogoCloud({ companies }) {
                     width={company.logo.width}
                     layout="responsive"
                     alt={company.logo.title}
-                    loader={imageLoader}
                   />
                 </Box>
               </Flex>
