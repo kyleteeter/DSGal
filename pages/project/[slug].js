@@ -282,5 +282,4 @@ export async function getStaticPaths() {
   }
 }
 
-
 BlogPost.getLayout = getContentLayout
