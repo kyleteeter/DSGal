@@ -4,7 +4,9 @@ import { MDXRemote } from 'next-mdx-remote'
 
 import { DotsSVG } from '@/svgs'
 import { SlashIcon } from '@/icons'
-import imageLoader from 'next.config'
+
+const imageLoader = require('image-loader');
+
 
 export default function Testimonial({ content, person }) {
   if (!person) return null
@@ -27,14 +29,14 @@ export default function Testimonial({ content, person }) {
           }}
         /> */}
         <Box pos="relative">
-          {/* <Box h={8} pos="relative">
+          <Box h={8} pos="relative">
             <Image
               src={person.company.logo.url}
               alt={person.company.logo.title}
               layout="fill"
-              loader="custom"
+              loader={imageLoader}
             />
-          </Box> */}
+          </Box>
           <Box as="blockquote" mt={10}>
             <Box
               maxW="3xl"
@@ -55,13 +57,13 @@ export default function Testimonial({ content, person }) {
               >
                 <Box flexShrink={{ md: 0 }}>
                   <Box mx="auto" h={10} w={10} position="relative">
-                    {/* <Image
+                    <Image
                       className="avatar"
                       alt={`${person.name} photo`}
                       src={person.photo.url}
                       layout="fill"
-                      
-                    /> */}
+                      loader={imageLoader}
+                    />
                   </Box>
                 </Box>
                 <Box

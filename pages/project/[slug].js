@@ -18,7 +18,7 @@ import { getContentLayout } from '@/layout'
 import { hygraphClient } from '@/lib/_client'
 import { parsePostData } from '@/utils/_parsePostData'
 import SEO from '@/components/seo'
-import imageLoader from 'next.config'
+const imageLoader = require('image-loader');
 
 export default function BlogPost({ nextPost, post, previousPost }) {
   const authorNameStyle = useColorModeValue('gray.900', 'gray.300')
@@ -88,13 +88,14 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                     spacing={2}
                   >
                     <Box w={10} h={10} pos="relative">
-                      {/* <Image
+                      <Image
                         className="avatar"
                         src={author.photo.url}
                         alt={author.name}
                         title={author.name}
                         layout="fill"
-                      /> */}
+                        loader={imageLoader}
+                      />
                     </Box>
                     <Box
                       as="dl"
@@ -120,7 +121,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
           >
             {post.coverImage && (
               <Box mx="auto">
-                {/* <Image
+                <Image
                   className="cover-image"
                   src={post.coverImage.url}
                   alt={post.coverImage.title}
@@ -128,7 +129,8 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   height={post.coverImage.height}
                   width={post.coverImage.width}
                   objectFit="cover"
-                /> */}
+                  loader={imageLoader}
+                />
               </Box>
             )}
             <Box maxW="none" pt={10} pb={8} color={useColorModeValue('gray.500', 'white')} className="prose">

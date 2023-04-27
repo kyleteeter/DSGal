@@ -2,7 +2,9 @@ import { Box, Flex, Link, Stack, Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
 import startCase from 'lodash.startcase'
-import imageLoader from 'next.config'
+
+const imageLoader = require('image-loader');
+
 
 export default function BlogPostCard({
   authors,
@@ -20,16 +22,16 @@ export default function BlogPostCard({
     <Flex flexDir="column" borderRadius="lg" boxShadow="lg" overflow="hidden">
       <Box flexShrink="0">
         {coverImage && (
-          // <Image
-          //   className="blog-post-card-image"
-          //   src={coverImage.url}
-          //   alt={coverImage.title}
-          //   title={coverImage.title}
-          //   width={coverImage.width}
-          //   height={coverImage.height}
-          //   objectFit="cover"
-          // />
-          <p>something</p>
+          <Image
+            className="blog-post-card-image"
+            src={coverImage.url}
+            alt={coverImage.title}
+            title={coverImage.title}
+            width={coverImage.width}
+            height={coverImage.height}
+            objectFit="cover"
+            loader={imageLoader}
+          />
         )}
       </Box>
       <Flex
@@ -81,13 +83,14 @@ export default function BlogPostCard({
                   borderRadius="full"
                   border="2px solid white"
                 >
-                  {/* <Image
+                  <Image
                     className="avatar"
                     src={author.photo.url}
                     alt={author.name}
                     title={author.name}
                     layout="fill"
-                  /> */}
+                    loader={imageLoader}
+                  />
                 </Box>
               )
             })}

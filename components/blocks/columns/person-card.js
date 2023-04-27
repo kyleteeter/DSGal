@@ -2,7 +2,8 @@ import Image from 'next/image'
 import { Box, HStack, Text } from '@chakra-ui/react'
 
 import { AvatarIcon } from '@/components/icons'
-import imageLoader from 'next.config'
+const imageLoader = require('image-loader');
+
 
 export default function PersonCard({ name, photo, role }) {
   return (
@@ -17,14 +18,14 @@ export default function PersonCard({ name, photo, role }) {
           borderRadius="full"
         >
           {photo ? (
-            // <Image
-            //   className="avatar"
-            //   src={photo.url}
-            //   alt={name}
-            //   title={name}
-            //   layout="fill"
-            // />
-            <p>Something</p>
+            <Image
+              className="avatar"
+              src={photo.url}
+              alt={name}
+              title={name}
+              layout="fill"
+              loader={imageLoader}
+            />
           ) : (
             <Box as={AvatarIcon} h="full" w="full" color="gray.300" />
           )}

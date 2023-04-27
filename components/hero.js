@@ -17,6 +17,8 @@ import Button from '@/components/button'
 
 import Navigation from '@/components/navigation'
 
+const imageLoader = require('image-loader');
+
 export default function Hero({ buttons, image, navigation, page }) {
   return (
     <Box position="relative">
@@ -127,7 +129,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   top={'50%'}
                   transform={'translateX(-50%) translateY(-50%)'}
                 />
-                {/* <Image
+                <Image
                   alt={'Hero Image'}
                   fit={'cover'}
                   align={'center'}
@@ -135,7 +137,8 @@ export default function Hero({ buttons, image, navigation, page }) {
                   h={'auto'}
                   src={jiannina.src}
                   style={{ objectPosition: 'top' }}
-                /> */}
+                  loader={imageLoader}
+                />
               </Box>
             </Flex>
           </Stack>
