@@ -1,10 +1,10 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
-import imageLoader from 'next.config'
 
 const imageDefaultStyles = {
   AspectRatio: '3/2',
 }
+const imageLoader = require('image-loader');
 
 export default function LogoCloud({ companies }) {
   if (!(companies || companies.length)) return null
@@ -38,6 +38,7 @@ export default function LogoCloud({ companies }) {
                     width={company.logo.width}
                     layout="responsive"
                     alt={company.logo.title}
+                    loader={imageLoader}
                   />
                 </Box>
               </Flex>

@@ -88,13 +88,13 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                     spacing={2}
                   >
                     <Box w={10} h={10} pos="relative">
-                      <Image
+                      {/* <Image
                         className="avatar"
                         src={author.photo.url}
                         alt={author.name}
                         title={author.name}
                         layout="fill"
-                      />
+                      /> */}
                     </Box>
                     <Box
                       as="dl"
@@ -120,7 +120,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
           >
             {post.coverImage && (
               <Box mx="auto">
-                <Image
+                {/* <Image
                   className="cover-image"
                   src={post.coverImage.url}
                   alt={post.coverImage.title}
@@ -128,7 +128,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   height={post.coverImage.height}
                   width={post.coverImage.width}
                   objectFit="cover"
-                />
+                /> */}
               </Box>
             )}
             <Box maxW="none" pt={10} pb={8} color={useColorModeValue('gray.500', 'white')} className="prose">

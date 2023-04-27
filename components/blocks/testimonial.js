@@ -55,12 +55,13 @@ export default function Testimonial({ content, person }) {
               >
                 <Box flexShrink={{ md: 0 }}>
                   <Box mx="auto" h={10} w={10} position="relative">
-                    <Image
+                    {/* <Image
                       className="avatar"
                       alt={`${person.name} photo`}
                       src={person.photo.url}
                       layout="fill"
-                    />
+                      
+                    /> */}
                   </Box>
                 </Box>
                 <Box

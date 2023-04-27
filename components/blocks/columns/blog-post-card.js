@@ -20,15 +20,16 @@ export default function BlogPostCard({
     <Flex flexDir="column" borderRadius="lg" boxShadow="lg" overflow="hidden">
       <Box flexShrink="0">
         {coverImage && (
-          <Image
-            className="blog-post-card-image"
-            src={coverImage.url}
-            alt={coverImage.title}
-            title={coverImage.title}
-            width={coverImage.width}
-            height={coverImage.height}
-            objectFit="cover"
-          />
+          // <Image
+          //   className="blog-post-card-image"
+          //   src={coverImage.url}
+          //   alt={coverImage.title}
+          //   title={coverImage.title}
+          //   width={coverImage.width}
+          //   height={coverImage.height}
+          //   objectFit="cover"
+          // />
+          <p>something</p>
         )}
       </Box>
       <Flex
@@ -80,13 +81,13 @@ export default function BlogPostCard({
                   borderRadius="full"
                   border="2px solid white"
                 >
-                  <Image
+                  {/* <Image
                     className="avatar"
                     src={author.photo.url}
                     alt={author.name}
                     title={author.name}
                     layout="fill"
-                  />
+                  /> */}
                 </Box>
               )
             })}

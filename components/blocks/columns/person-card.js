@@ -17,13 +17,14 @@ export default function PersonCard({ name, photo, role }) {
           borderRadius="full"
         >
           {photo ? (
-            <Image
-              className="avatar"
-              src={photo.url}
-              alt={name}
-              title={name}
-              layout="fill"
-            />
+            // <Image
+            //   className="avatar"
+            //   src={photo.url}
+            //   alt={name}
+            //   title={name}
+            //   layout="fill"
+            // />
+            <p>Something</p>
           ) : (
             <Box as={AvatarIcon} h="full" w="full" color="gray.300" />
           )}
