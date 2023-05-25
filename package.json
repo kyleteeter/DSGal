@@ -3,11 +3,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "dev": "node server.js",
+    "build": "yarn dev && next build",
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
