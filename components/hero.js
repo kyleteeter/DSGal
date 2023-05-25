@@ -6,16 +6,18 @@ import {
   Heading,
   createIcon,
   IconButton,
-  Image,
   Icon,
   Text,
   useColorModeValue
 } from '@chakra-ui/react'
-import { jiannina } from '../assets'
+import { jiannina } from '../assets/index'
+import Image from 'next/image'
 
 import Button from '@/components/button'
 
 import Navigation from '@/components/navigation'
+
+const imageLoader = require('image-loader');
 
 export default function Hero({ buttons, image, navigation, page }) {
   return (
@@ -132,9 +134,10 @@ export default function Hero({ buttons, image, navigation, page }) {
                   fit={'cover'}
                   align={'center'}
                   w={'100%'}
-                  h={'100%'}
+                  h={'auto'}
                   src={jiannina.src}
                   style={{ objectPosition: 'top' }}
+                  loader={imageLoader}
                 />
               </Box>
             </Flex>

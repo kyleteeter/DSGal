@@ -3,6 +3,9 @@ import NextLink from 'next/link'
 import Image from 'next/image'
 import startCase from 'lodash.startcase'
 
+const imageLoader = require('image-loader');
+
+
 export default function BlogPostCard({
   authors,
   category,
@@ -27,6 +30,7 @@ export default function BlogPostCard({
             width={coverImage.width}
             height={coverImage.height}
             objectFit="cover"
+            loader={imageLoader}
           />
         )}
       </Box>
@@ -85,6 +89,7 @@ export default function BlogPostCard({
                     alt={author.name}
                     title={author.name}
                     layout="fill"
+                    loader={imageLoader}
                   />
                 </Box>
               )

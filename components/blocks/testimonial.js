@@ -5,6 +5,9 @@ import { MDXRemote } from 'next-mdx-remote'
 import { DotsSVG } from '@/svgs'
 import { SlashIcon } from '@/icons'
 
+const imageLoader = require('image-loader');
+
+
 export default function Testimonial({ content, person }) {
   if (!person) return null
   const textColor = useColorModeValue('gray.900', 'white')
@@ -26,13 +29,14 @@ export default function Testimonial({ content, person }) {
           }}
         /> */}
         <Box pos="relative">
-          {/* <Box h={8} pos="relative">
+          <Box h={8} pos="relative">
             <Image
               src={person.company.logo.url}
               alt={person.company.logo.title}
               layout="fill"
+              loader={imageLoader}
             />
-          </Box> */}
+          </Box>
           <Box as="blockquote" mt={10}>
             <Box
               maxW="3xl"
@@ -58,6 +62,7 @@ export default function Testimonial({ content, person }) {
                       alt={`${person.name} photo`}
                       src={person.photo.url}
                       layout="fill"
+                      loader={imageLoader}
                     />
                   </Box>
                 </Box>

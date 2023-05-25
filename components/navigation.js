@@ -26,6 +26,10 @@ import {
   SunIcon,
 } from "@chakra-ui/icons";
 import { logoblack, logowhite } from "../assets";
+import Image from "next/image";
+
+const imageLoader = require('image-loader');
+
 const NAV_ITEMS = [
   {
     label: "About",
@@ -95,10 +99,11 @@ export default function Navigation() {
             fontFamily={"heading"}
             color={useColorModeValue("palette.black", "white")}
           >
-            <img
+            <Image
               src={colorMode === "light" ? logowhite.src : logoblack.src}
               alt='Logo'
               width={200}
+              loader={imageLoader}
             />
           </Text>
           </Link>

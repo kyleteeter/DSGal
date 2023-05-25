@@ -15,12 +15,12 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router'
-import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 import { logoblack, logowhite } from '../assets';
-import { locales } from '@/lib/_locales'
+import Image from 'next/image';
 
-
+const imageLoader = require('image-loader');
 
 const SocialButton = ({
   children,
@@ -58,10 +58,10 @@ const ListHeader = ({ children }) => {
 
 export default function LargeWithNewsletter() {
   const router = useRouter()
-  const activeLocale = locales.find((locale) => locale.value === router.locale)
-  const setLocale = (event) => {
-    router.push(router.asPath, router.asPath, { locale: event.target.value })
-  }
+  // const activeLocale = locales.find((locale) => locale.value === router.locale)
+  // const setLocale = (event) => {
+  //   router.push(router.asPath, router.asPath, { locale: event.target.value })
+  // }
   const { colorMode } = useColorMode();
 
   return (
@@ -74,10 +74,11 @@ export default function LargeWithNewsletter() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <img
+              <Image
                 src={colorMode === "light" ? logowhite.src : logoblack.src}
                 alt='Logo'
                 width={200}
+                loader={imageLoader}
               />
             </Box>
             <Text fontSize={'sm'}>
@@ -132,7 +133,7 @@ export default function LargeWithNewsletter() {
                 icon={<BiMailSend />}
               />
             </Stack>
-            <Box mt={{ base: 12, xl: 0 }}>
+            {/* <Box mt={{ base: 12, xl: 0 }}>
               <ListHeader>Language</ListHeader>
 
               <Box as="form" mt={4} maxW={{ sm: 'xs' }}>
@@ -149,7 +150,7 @@ export default function LargeWithNewsletter() {
                       bg="palette.black"
                       borderColor="transparent"
                       fontSize={{ sm: 'sm' }}
-                      value={activeLocale.value}
+                      // value={activeLocale.value}
                       onChange={setLocale}
                     >
                       {locales.map((locale) => (
@@ -167,7 +168,7 @@ export default function LargeWithNewsletter() {
                   </Box>
                 </Box>
               </Box>
-            </Box>
+            </Box> */}
           </Stack>
         </SimpleGrid>
       </Container>

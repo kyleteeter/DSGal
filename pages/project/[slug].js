@@ -18,6 +18,7 @@ import { getContentLayout } from '@/layout'
 import { hygraphClient } from '@/lib/_client'
 import { parsePostData } from '@/utils/_parsePostData'
 import SEO from '@/components/seo'
+const imageLoader = require('image-loader');
 
 export default function BlogPost({ nextPost, post, previousPost }) {
   const authorNameStyle = useColorModeValue('gray.900', 'gray.300')
@@ -93,6 +94,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                         alt={author.name}
                         title={author.name}
                         layout="fill"
+                        loader={imageLoader}
                       />
                     </Box>
                     <Box
@@ -127,6 +129,7 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   height={post.coverImage.height}
                   width={post.coverImage.width}
                   objectFit="cover"
+                  loader={imageLoader}
                 />
               </Box>
             )}
@@ -221,12 +224,11 @@ export default function BlogPost({ nextPost, post, previousPost }) {
   )
 }
 
-export async function getStaticProps({ locale, params, preview = false }) {
+export async function getStaticProps({ params, preview = false }) {
   const client = hygraphClient(preview)
 
   const { allPosts, page, post } = await client.request(blogPostQuery, {
-    locale,
-    slug: params.slug
+   slug: params.slug
   })
 
   if (!post) {
@@ -254,7 +256,7 @@ export async function getStaticProps({ locale, params, preview = false }) {
   }
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths() {
   let paths = []
 
   const client = hygraphClient()
@@ -267,12 +269,12 @@ export async function getStaticPaths({ locales }) {
     }
   `)
 
-  for (const locale of locales) {
+  // for (const locale of locales) {
     paths = [
       ...paths,
-      ...posts.map((post) => ({ params: { slug: post.slug }, locale }))
+      ...posts.map((post) => ({ params: { slug: post.slug } }))
     ]
-  }
+  // }
 
   return {
     paths,
