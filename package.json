@@ -5,7 +5,7 @@
   "homepage": "https://test.kyle-teeter.com",
   "scripts": {
     "dev": "node server.js",
-    "build": "next build",
+    "build": "yarn dev && next build",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
