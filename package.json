@@ -2,7 +2,6 @@
   "name": "reference-marketing-website",
   "private": true,
   "license": "MIT",
-  "homepage": "https://test.kyle-teeter.com",
   "scripts": {
     "dev": "node server.js",
     "build": "yarn dev & wait-on http://localhost:3000 && next build",
@@ -21,14 +20,21 @@
     "lodash.camelcase": "4.3.0",
     "lodash.startcase": "4.4.0",
     "next": "12.1.4",
+    "next-images": "^1.8.5",
     "next-mdx-remote": "4.0.2",
+    "next-optimized-images": "^3.0.0-canary.10",
     "next-seo": "5.4.0",
+    "path-browserify": "^1.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.7.1",
-    "react-transition-group": "4.4.2"
+    "react-transition-group": "4.4.2",
+    "responsive-loader": "^3.1.2",
+    "sharp": "^0.32.0",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
+    "browserslist": "4.21.5",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.4",
     "prettier": "2.6.2",
