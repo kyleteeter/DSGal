@@ -3,9 +3,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js",
-    "build": "yarn dev & wait-on http://localhost:3000 && next build",
-    "start": "NODE_ENV=production node server.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
