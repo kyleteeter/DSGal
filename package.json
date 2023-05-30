@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "node server.js",
-    "build": "yarn dev & wait-on http://localhost:3000 && next build",
+    "vercel-build": "yarn dev && next build",
+    "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
