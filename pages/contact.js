@@ -1,13 +1,9 @@
 import {
-  Container,
-  Flex,
   Box,
   Heading,
   Text,
-  IconButton,
   Button,
   VStack,
-  HStack,
   Wrap,
   WrapItem,
   FormControl,
@@ -17,13 +13,7 @@ import {
   InputLeftElement,
   Textarea
 } from '@chakra-ui/react'
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail
-} from 'react-icons/md'
+import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from 'react-icons/md'
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
 import Navigation from '@/components/navigation'
 import LargeWithNewsletter from '@/components/footer'

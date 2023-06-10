@@ -2,18 +2,16 @@ import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
 
 const imageDefaultStyles = {
-  AspectRatio: '3/2',
+  AspectRatio: '3/2'
 }
-const imageLoader = require('image-loader');
 
 export default function LogoCloud({ companies }) {
-  if (!(companies || companies.length)) return null
   const bgColor = useColorModeValue('white', 'white')
+  if (!(companies || companies.length)) return <></>
 
   return (
     <Box bg={bgColor} mb={40}>
       <Box maxW="7xl" mx="auto" py={[6, 1]} px={[6, 6, null, 8]}>
-
         <Box display="flow-root" mt={{ base: 8, lg: 10 }}>
           <Flex
             mt={-8}
@@ -38,7 +36,6 @@ export default function LogoCloud({ companies }) {
                     width={company.logo.width}
                     layout="responsive"
                     alt={company.logo.title}
-                    loader={imageLoader}
                   />
                 </Box>
               </Flex>

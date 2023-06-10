@@ -7,14 +7,14 @@ export default function StatSection({
   gridTitle,
   ...props
 }) {
-  if (!(columns || columns.length)) return null
-
   const bgColor = useColorModeValue('white', 'gray.800')
   const headerColor = useColorModeValue('gray.900', 'white')
   const sectionbgColor = useColorModeValue('gray.50', 'gray.800')
   const columnColor = useColorModeValue('white', 'gray.600')
   const columnLabel = useColorModeValue('gray.500', 'white')
   const borderColor = useColorModeValue('gray.100', 'white')
+
+  if (!(columns || columns.length)) return <></>
 
   return (
     <Box bg={bgColor} pt={[12, 16]}>

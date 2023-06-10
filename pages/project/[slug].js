@@ -18,7 +18,6 @@ import { getContentLayout } from '@/layout'
 import { hygraphClient } from '@/lib/_client'
 import { parsePostData } from '@/utils/_parsePostData'
 import SEO from '@/components/seo'
-const imageLoader = require('image-loader');
 
 export default function BlogPost({ nextPost, post, previousPost }) {
   const authorNameStyle = useColorModeValue('gray.900', 'gray.300')
@@ -94,7 +93,6 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                         alt={author.name}
                         title={author.name}
                         layout="fill"
-                        loader={imageLoader}
                       />
                     </Box>
                     <Box
@@ -129,11 +127,16 @@ export default function BlogPost({ nextPost, post, previousPost }) {
                   height={post.coverImage.height}
                   width={post.coverImage.width}
                   objectFit="cover"
-                  loader={imageLoader}
                 />
               </Box>
             )}
-            <Box maxW="none" pt={10} pb={8} color={useColorModeValue('gray.500', 'white')} className="prose">
+            <Box
+              maxW="none"
+              pt={10}
+              pb={8}
+              color={useColorModeValue('gray.500', 'white')}
+              className="prose"
+            >
               <MDXRemote {...post.content.mdx} />
             </Box>
           </Box>
@@ -228,7 +231,7 @@ export async function getStaticProps({ params, preview = false }) {
   const client = hygraphClient(preview)
 
   const { allPosts, page, post } = await client.request(blogPostQuery, {
-   slug: params.slug
+    slug: params.slug
   })
 
   if (!post) {
@@ -270,10 +273,7 @@ export async function getStaticPaths() {
   `)
 
   // for (const locale of locales) {
-    paths = [
-      ...paths,
-      ...posts.map((post) => ({ params: { slug: post.slug } }))
-    ]
+  paths = [...paths, ...posts.map((post) => ({ params: { slug: post.slug } }))]
   // }
 
   return {

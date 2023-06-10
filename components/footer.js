@@ -12,20 +12,15 @@ import {
   Input,
   IconButton,
   useColorModeValue,
-  useColorMode,
-} from '@chakra-ui/react';
+  useColorMode
+} from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { BiMailSend } from 'react-icons/bi';
-import { logoblack, logowhite } from '../assets';
-import Image from 'next/image';
+import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { BiMailSend } from 'react-icons/bi'
+import { logoblack, logowhite } from '../assets'
+import Image from 'next/image'
 
-const imageLoader = require('image-loader');
-
-const SocialButton = ({
-  children,
-  label,
-  href }) => {
+const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -40,21 +35,22 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-      }}>
+        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+      }}
+    >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
     </chakra.button>
-  );
-};
+  )
+}
 
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
       {children}
     </Text>
-  );
-};
+  )
+}
 
 export default function LargeWithNewsletter() {
   const router = useRouter()
@@ -62,16 +58,18 @@ export default function LargeWithNewsletter() {
   // const setLocale = (event) => {
   //   router.push(router.asPath, router.asPath, { locale: event.target.value })
   // }
-  const { colorMode } = useColorMode();
+  const { colorMode } = useColorMode()
 
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      color={useColorModeValue('gray.700', 'gray.200')}
+    >
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
-          spacing={8}>
+          spacing={8}
+        >
           <Stack spacing={6}>
             <Box>
               {/* <Image
@@ -121,14 +119,14 @@ export default function LargeWithNewsletter() {
                 bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
                 border={0}
                 _focus={{
-                  bg: 'whiteAlpha.300',
+                  bg: 'whiteAlpha.300'
                 }}
               />
               <IconButton
                 bg={useColorModeValue('palette.brown', 'palette.brown')}
                 color={useColorModeValue('white', 'palette.brown')}
                 _hover={{
-                  bg: 'palette.black',
+                  bg: 'palette.black'
                 }}
                 aria-label="Subscribe"
                 icon={<BiMailSend />}
@@ -174,8 +172,5 @@ export default function LargeWithNewsletter() {
         </SimpleGrid>
       </Container>
     </Box>
-  );
+  )
 }
-
-
-

@@ -84,7 +84,8 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   images: {
-    loader: "custom"
+    loader: 'custom',
+    loaderFile: './image-loader.js'
   }
 }
 

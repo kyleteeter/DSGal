@@ -1,6 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
-
-import Button from '@/components/button'
+import { Box, Text } from '@chakra-ui/react'
 
 const themeColor = {
   WARNING: 'orange.600'

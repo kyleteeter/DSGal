@@ -5,13 +5,12 @@ import { MDXRemote } from 'next-mdx-remote'
 import { DotsSVG } from '@/svgs'
 import { SlashIcon } from '@/icons'
 
-const imageLoader = require('image-loader');
-
+const imageLoader = require('image-loader')
 
 export default function Testimonial({ content, person }) {
-  if (!person) return null
   const textColor = useColorModeValue('gray.900', 'white')
   const roleColor = useColorModeValue('gray.500', 'gray.400')
+  if (!person) return <></>
 
   return (
     <Box as="section" py={[12, null, 20, 24]} bg="gray.90" overflow="hidden">
@@ -34,7 +33,6 @@ export default function Testimonial({ content, person }) {
               src={person.company.logo.url}
               alt={person.company.logo.title}
               layout="fill"
-              loader={imageLoader}
             />
           </Box>
           <Box as="blockquote" mt={10}>

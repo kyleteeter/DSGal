@@ -15,14 +15,12 @@ export default function Grid({
   layout = 'STACKED',
   width = 1
 }) {
-  if (!columns || !columns.length) return null
-
-  const stackLayout = layout === 'STACK'
-  const splitLayout = layout === 'SPLIT'
   const bgColor = useColorModeValue('white', 'gray.800')
   const subtitleColor = useColorModeValue('gray.500', 'gray.400')
   const textColor = useColorModeValue('gray.800', 'white')
-
+  if (!columns || !columns.length) return <></>
+  const stackLayout = layout === 'STACK'
+  const splitLayout = layout === 'SPLIT'
   return (
     <Box overflow="hidden" bg={bgColor}>
       <Box pos="relative" maxW="7xl" mx="auto" py={12} px={[4, 6, null, 8]}>
