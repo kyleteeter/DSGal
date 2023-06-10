@@ -105,7 +105,7 @@ export default function Navigation() {
               width={200}
               height={80}
               priority
-              loader={({ src, width }) => src}
+              loader={({ src, width }) => `${src}?=${width}`}
             />
           </Text>
           </Link>
