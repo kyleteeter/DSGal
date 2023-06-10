@@ -28,7 +28,7 @@ import {
 import { logoblack, logowhite } from "../assets";
 import Image from "next/image";
 
-const imageLoader = require('image-loader');
+// const imageLoader = require('image-loader');
 
 const NAV_ITEMS = [
   {
@@ -100,10 +100,11 @@ export default function Navigation() {
             color={useColorModeValue("palette.black", "white")}
           >
             <Image
-              src={colorMode === "light" ? logowhite.src : logoblack.src}
+              src={colorMode === "light" ? logowhite : logoblack}
               alt='Logo'
               width={200}
-              loader={imageLoader}
+              height={80}
+              priority
             />
           </Text>
           </Link>

@@ -74,12 +74,13 @@ export default function LargeWithNewsletter() {
           spacing={8}>
           <Stack spacing={6}>
             <Box>
-              <Image
+              {/* <Image
                 src={colorMode === "light" ? logowhite.src : logoblack.src}
                 alt='Logo'
                 width={200}
+                height={80}
                 loader={imageLoader}
-              />
+              /> */}
             </Box>
             <Text fontSize={'sm'}>
               © 2022 DataScienceGal. All rights reserved

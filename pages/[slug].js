@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
   const { pages } = await client.request(gql`
     {
-      pages(where: { slug_not_in: ["home", "blog"] }) {
+      pages(where: { slug_not_in: ["home", "projects"] }) {
         slug
       }
     }

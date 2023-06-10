@@ -129,16 +129,16 @@ export default function Hero({ buttons, image, navigation, page }) {
                   top={'50%'}
                   transform={'translateX(-50%) translateY(-50%)'}
                 />
-                <Image
+                {/* <Image
                   alt={'Hero Image'}
                   fit={'cover'}
                   align={'center'}
                   w={'100%'}
-                  h={'auto'}
+                  h={'200px'}
                   src={jiannina.src}
                   style={{ objectPosition: 'top' }}
                   loader={imageLoader}
-                />
+                /> */}
               </Box>
             </Flex>
           </Stack>
