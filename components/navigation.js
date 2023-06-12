@@ -103,7 +103,7 @@ export default function Navigation() {
               src={colorMode === "light" ? logowhite : logoblack}
               alt='Logo'
               width={200}
-              height={80}
+              height={60}
               priority
               loader={({ src, width }) => `${src}?=${width}`}
             />
