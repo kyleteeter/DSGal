@@ -29,7 +29,7 @@ export default function Testimonial({ content, person }) {
           }}
         /> */}
         <Box pos="relative">
-          <Box h={8} pos="relative">
+          {/* <Box h={8} pos="relative">
             <Image
               src={person.company.logo.url}
               alt={person.company.logo.title}
@@ -37,7 +37,7 @@ export default function Testimonial({ content, person }) {
               style={{ minWidth: '150px !important', minHeight: '300% !important' }}
               loader={imageLoader}
             />
-          </Box>
+          </Box> */}
           <Box as="blockquote" mt={10}>
             <Box
               maxW="3xl"
