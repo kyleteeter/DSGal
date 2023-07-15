@@ -123,20 +123,22 @@ export default function Navigation() {
           <Button onClick={toggleColorMode}>
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"palette.black"}
-            bg={"palette.brown"}
-            href={"#"}
-            _hover={{
-              bg: "palette.black",
-              color: "palette.brown"
-            }}
-          >
-            Resume
-          </Button>
+          <Link href="https://docs.google.com/document/d/1Tb_l0HHa3P2f2dtYsZUQcwa6EGEaBX8UFFMv7jEyr4I/edit?usp=sharing" passHref>
+            <Button
+              display={{ base: "none", md: "inline-flex" }}
+              fontSize={"sm"}
+              fontWeight={600}
+              color={"palette.black"}
+              bg={"palette.brown"}
+              _hover={{
+                bg: "palette.black",
+                color: "palette.brown"
+              }}
+              as="a"
+            >
+              Resume
+            </Button>
+          </Link>
         </Stack>
       </Flex>
 
