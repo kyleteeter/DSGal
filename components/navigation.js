@@ -103,7 +103,7 @@ export default function Navigation() {
               src={colorMode === "light" ? logowhite : logoblack}
               alt='Logo'
               width={200}
-              height={60}
+              height={50}
               priority
               loader={({ src, width }) => `${src}?=${width}`}
             />
@@ -157,7 +157,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} pt={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Center>
