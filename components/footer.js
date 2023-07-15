@@ -99,14 +99,12 @@ export default function LargeWithNewsletter() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Quick Links</ListHeader>
-            <Link href={'#'}>About us</Link>
-            <Link href={'#'}>BloomTech Projects</Link>
-            <Link href={'#'}>Freelance Work</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Contact</Link>
+            <Link href={'about'}>About</Link>
+            <Link href={'project'}>Projects</Link>
+            <Link href={'contact'}>Hire Me</Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Hire me</ListHeader>
+            <ListHeader>Top Skills</ListHeader>
             <Link href={'#'}>Data Visualization</Link>
             <Link href={'#'}>Data Wrangling</Link>
             <Link href={'#'}>Marketing Analyics</Link>
