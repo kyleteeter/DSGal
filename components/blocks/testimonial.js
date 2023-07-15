@@ -34,7 +34,7 @@ export default function Testimonial({ content, person }) {
               src={person.company.logo.url}
               alt={person.company.logo.title}
               layout="responsive"
-              style={{ minWidth: '0 !important' }}
+              style={{ minWidth: '150px !important', minHeight: '300% !important' }}
               loader={imageLoader}
             />
           </Box>
