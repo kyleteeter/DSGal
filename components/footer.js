@@ -83,7 +83,7 @@ export default function LargeWithNewsletter() {
               /> */}
             </Box>
             <Text fontSize={'sm'}>
-              © 2022 DataScienceGal. All rights reserved
+              © 2023 DataScienceGal. All rights reserved
             </Text>
             <Stack direction={'row'} spacing={6}>
               <SocialButton label={'Twitter'} href={'#'}>
