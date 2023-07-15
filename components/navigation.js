@@ -35,21 +35,21 @@ const NAV_ITEMS = [
     label: "About",
     href: "about",
   },
-  {
-    label: "Portfolio",
-    children: [
-      {
-        label: "BloomTech Projects",
-        subLabel: "See Data Science at work.",
-        href: "project",
-      },
-      {
-        label: "Freelance Work",
-        subLabel: "Case studies of real clients.",
-        href: "#",
-      },
-    ],
-  },
+  // {
+  //   label: "Portfolio",
+  //   children: [
+  //     {
+  //       label: "BloomTech Projects",
+  //       subLabel: "See Data Science at work.",
+  //       href: "project",
+  //     },
+  //     {
+  //       label: "Freelance Work",
+  //       subLabel: "Case studies of real clients.",
+  //       href: "#",
+  //     },
+  //   ],
+  // },
   {
     label: "Projects",
     href: "project",
