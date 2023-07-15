@@ -102,11 +102,11 @@ export default function Hero({ buttons, image, navigation, page }) {
               position={'relative'}
               w={'full'}>
               <Blob
-                w={'350%'}
-                h={'350%'}
+                w={'110%'}
+                h={'800%'}
                 position={'absolute'}
-                top={'-75%'}
-                left={0}
+                top={'-340%'}
+                left={'-50px'}
                 zIndex={-1}
                 color={useColorModeValue('palette.pink', 'palette.pink')}
               />
