@@ -33,7 +33,7 @@ export default function Testimonial({ content, person }) {
             <Image
               src={person.company.logo.url}
               alt={person.company.logo.title}
-              layout="fill"
+              layout="responsive"
               loader={imageLoader}
             />
           </Box>
