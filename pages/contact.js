@@ -55,8 +55,11 @@ export default function contact({ navigation }) {
                     color="gray.900"
                     _hover={{ border: '2px solid #E7D3C6' }}
                     leftIcon={<MdPhone color="#E7D3C6" size="20px" />}
+                    onClick={() => {
+                      window.location.href = 'tel:+16125640070';
+                    }}
                   >
-                    +1 (763) 200-4020
+                    +1 (612) 564-0070
                   </Button>
                   <Button
                     size="md"
@@ -66,8 +69,11 @@ export default function contact({ navigation }) {
                     color="gray.900"
                     _hover={{ border: '2px solid #E7D3C6' }}
                     leftIcon={<MdEmail color="#E7D3C6" size="20px" />}
+                    onClick={() => {
+                      window.location.href = 'mailto:jiannina.pinto@gmail.com';
+                    }}
                   >
-                    jianninapinto
+                    jiannina.pinto@gmail.com
                   </Button>
                   <Button
                     size="md"
