@@ -86,49 +86,8 @@ export default function contact({ navigation }) {
           </WrapItem>
           <WrapItem w="40%" bg="gray.900" borderRadius="lg">
             <Box m={16} color="#white" w="100%">
-              <VStack spacing={5}>
-                <FormControl id="name">
-                  <FormLabel color="white">Your Name</FormLabel>
-                  <InputGroup bg="white" borderRadius="lg">
-                    <InputLeftElement pointerEvents="none">
-                      <BsPerson color="gray.200" />
-                    </InputLeftElement>
-                    <Input type="text" size="md" w="100%" />
-                  </InputGroup>
-                </FormControl>
-                <FormControl id="name">
-                  <FormLabel color="white">Mail</FormLabel>
-                  <InputGroup bg="white" borderRadius="lg">
-                    <InputLeftElement pointerEvents="none">
-                      <MdOutlineEmail color="gray.200" />
-                    </InputLeftElement>
-                    <Input type="text" size="md" />
-                  </InputGroup>
-                </FormControl>
-                <FormControl id="name">
-                  <FormLabel color="white">Message</FormLabel>
-                  <Textarea
-                    bg="white"
-                    borderRadius="lg"
-                    _hover={{
-                      borderRadius: 'white'
-                    }}
-                    placeholder="message"
-                  />
-                </FormControl>
-                <FormControl id="name" float="right">
-                  <Button
-                    variant="solid"
-                    bg="palette.brown"
-                    color="gray.900"
-                    w="100%"
-                    p="6"
-                    _hover={{}}
-                  >
-                    Let&apos;s Chat!
-                  </Button>
-                </FormControl>
-              </VStack>
+              <div class="calendly-inline-widget" data-url="https://calendly.com/jiannina-pinto/20min" style="min-width:320px;height:700px;"></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </Box>
           </WrapItem>
         </Wrap>
