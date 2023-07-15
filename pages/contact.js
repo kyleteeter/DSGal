@@ -46,7 +46,7 @@ export default function contact({ navigation }) {
                 Fill up the form below to contact
               </Text>
               <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                <VStack pl={0} spacing={3} alignItems="flex-end">
+                <VStack pl={0} spacing={3} alignItems="flex-start">
                   <Button
                     size="md"
                     height="48px"
