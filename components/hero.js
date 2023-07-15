@@ -105,7 +105,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                 w={'350%'}
                 h={'350%'}
                 position={'absolute'}
-                top={'-25%'}
+                top={'-75%'}
                 left={0}
                 zIndex={-1}
                 color={useColorModeValue('palette.pink', 'palette.pink')}
