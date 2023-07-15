@@ -86,8 +86,8 @@ export default function contact({ navigation }) {
           </WrapItem>
           <WrapItem w="40%" bg="gray.900" borderRadius="lg">
             <Box m={16} color="#white" w="100%">
-              <div class="calendly-inline-widget" data-url="https://calendly.com/jiannina-pinto/20min" style="min-width:320px;height:700px;"></div>
-              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <div className="calendly-inline-widget" data-url="https://calendly.com/jiannina-pinto/20min" style={{ minWidth: '320px', height: '700px' }}></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </Box>
           </WrapItem>
         </Wrap>
