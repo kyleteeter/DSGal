@@ -133,7 +133,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   alt={'Hero Image'}
                   align={'center'}
                   w={'100%'}
-                  h={200}
+                  h={250}
                   src={jiannina.src}
                   style={{ objectPosition: 'top', objectFit: 'cover' }}
                   priority
