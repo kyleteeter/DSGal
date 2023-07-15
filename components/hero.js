@@ -102,22 +102,22 @@ export default function Hero({ buttons, image, navigation, page }) {
               position={'relative'}
               w={'full'}>
               <Blob
-                w={'250%'}
-                h={'250%'}
+                w={'350%'}
+                h={'350%'}
                 position={'absolute'}
-                top={'-75%'}
+                top={'-25%'}
                 left={0}
                 zIndex={-1}
                 color={useColorModeValue('palette.pink', 'palette.pink')}
               />
               <Box
                 position={'relative'}
-                height={'370px'}
+                height={'3513px'}
                 rounded={'2xl'}
                 boxShadow={'2xl'}
                 width={'full'}
                 overflow={'hidden'}>
-                <IconButton
+                {/* <IconButton
                   aria-label={'Play Button'}
                   variant={'ghost'}
                   _hover={{ bg: 'transparent' }}
@@ -128,7 +128,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   left={'50%'}
                   top={'50%'}
                   transform={'translateX(-50%) translateY(-50%)'}
-                />
+                /> */}
                 <Image
                   alt={'Hero Image'}
                   align={'center'}
