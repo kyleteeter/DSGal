@@ -131,7 +131,6 @@ export default function Hero({ buttons, image, navigation, page }) {
                 />
                 <Image
                   alt={'Hero Image'}
-                  fit={'cover'}
                   align={'center'}
                   w={'100%'}
                   h={200}
