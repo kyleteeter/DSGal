@@ -135,7 +135,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   w={'100%'}
                   h={200}
                   src={jiannina.src}
-                  style={{ objectPosition: 'top' }}
+                  style={{ objectPosition: 'top', objectFit: 'cover' }}
                   priority
                   loader={({ src, width }) => `${src}?=${width}`}
                 />
