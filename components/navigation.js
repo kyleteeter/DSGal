@@ -123,7 +123,6 @@ export default function Navigation() {
           <Button onClick={toggleColorMode}>
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </Button>
-          <Link href="https://docs.google.com/document/d/1Tb_l0HHa3P2f2dtYsZUQcwa6EGEaBX8UFFMv7jEyr4I/edit?usp=sharing" passHref>
           <Button
           display={{ base: "none", md: "inline-flex" }}
           fontSize={"sm"}
@@ -135,12 +134,12 @@ export default function Navigation() {
             color: "palette.brown"
           }}
           as="a"
+          href="https://docs.google.com/document/d/1Tb_l0HHa3P2f2dtYsZUQcwa6EGEaBX8UFFMv7jEyr4I/edit?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
           Resume
         </Button>
-          </Link>
         </Stack>
       </Flex>
 
