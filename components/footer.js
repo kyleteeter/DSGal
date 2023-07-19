@@ -168,7 +168,7 @@ export default function LargeWithNewsletter() {
                 </Box>
               </Box>
             </Box> */}
-          </Stack>
+          {/* </Stack> */}
         </SimpleGrid>
       </Container>
     </Box>
