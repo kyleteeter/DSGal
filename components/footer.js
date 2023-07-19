@@ -103,7 +103,7 @@ export default function LargeWithNewsletter() {
             <Link href={'project'}>Projects</Link>
             <Link href={'contact'}>Hire Me</Link>
           </Stack>
-          <Stack align={'flex-start'}>
+          {/* <Stack align={'flex-start'}>
             <ListHeader>Top Skills</ListHeader>
             <Link href={'#'}>Data Visualization</Link>
             <Link href={'#'}>Data Wrangling</Link>
@@ -131,7 +131,7 @@ export default function LargeWithNewsletter() {
                 aria-label="Subscribe"
                 icon={<BiMailSend />}
               />
-            </Stack>
+            </Stack> */}
             {/* <Box mt={{ base: 12, xl: 0 }}>
               <ListHeader>Language</ListHeader>
 
