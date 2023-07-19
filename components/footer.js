@@ -97,6 +97,8 @@ export default function LargeWithNewsletter() {
               </SocialButton>
             </Stack>
           </Stack>
+          <Stack></Stack>
+          <Stack></Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Quick Links</ListHeader>
             <Link href={'about'}>About</Link>
