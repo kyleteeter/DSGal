@@ -81,6 +81,7 @@ export default function contact({ navigation }) {
                     width="200px"
                     variant="ghost"
                     color="gray.900"
+                    _hover={{ border: 'none' }}
                     leftIcon={<MdLocationOn color="#E7D3C6" size="20px" />}
                   >
                     Twin Cities, Minnesota
