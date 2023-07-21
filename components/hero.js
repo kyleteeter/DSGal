@@ -43,7 +43,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   fontWeight={200}
                   fontSize={{ base: '1xl', sm: '2xl', lg: '2xl' }}
                 >
-                  Hi, my name is
+                  Hi! My name is
                 </Text>
                 <br />
                 <Text as={'span'}>Jiannina Pinto. </Text>
@@ -67,9 +67,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   Data Scientist
                 </Text>
               </Heading>
-              <Text color={'gray.500'}>
-              My passion lies in delving deep into the data and uncovering the insights that drive informed decision-making with a focus on transforming raw data into easy-to-understand, actionable stories.
-              </Text>
+              <Text color={'gray.500'}>To me, data is not just a collection of numbers and statistics, but the key that unlocks transformative insights and endless possibilities. Each data point holds a unique story, and my passionlies in weaving those stories into actionable insights that drive meaningful impact in businesses and people’s lives. As a Data Scientist, I not only delve deep into the data to uncover valuable insights, but I also have a strong interest on using machine learning models to generate ethical and practical solutions for real-world challenges.</Text>
 
               {buttons && (
                 <Stack
