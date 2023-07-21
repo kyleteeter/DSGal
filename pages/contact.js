@@ -35,7 +35,7 @@ export default function contact({ navigation }) {
     <Box>
       <Navigation {...navigation} />
       <Box
-        color="gray.900"
+        color={textColor}
         borderRadius="lg"
         m={{ sm: 4, md: 16, lg: 10 }}
         p={{ sm: 5, md: 5, lg: 16 }}
@@ -43,7 +43,7 @@ export default function contact({ navigation }) {
         <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
           <WrapItem w="30%">
             <Box m={16}>
-              <Heading>Contact</Heading>
+              <Heading >Contact</Heading>
               <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.600">
                 Send me an email or schedule a call if you would like to chat. 
               </Text>
