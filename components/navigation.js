@@ -33,7 +33,7 @@ import Image from "next/image";
 const NAV_ITEMS = [
   {
     label: "About",
-    href: "/",
+    href: "about",
   },
   // {
   //   label: "Portfolio",
