@@ -15,7 +15,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router'
-import { FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 import { logoblack, logowhite } from '../assets';
 import Image from 'next/image';
@@ -86,14 +86,11 @@ export default function LargeWithNewsletter() {
               © 2023 DataScienceGal. All rights reserved
             </Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton label={'Linkedin'} href={'#'}>
+              <SocialButton label={'Linkedin'} href={'https://www.linkedin.com/in/jiannina-pinto/'} target="_blank">
                 <FaLinkedin />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
-                <FaInstagram />
+              <SocialButton label={'Github'} href={'https://github.com/jianninapinto'} target="_blank">
+                <FaGithub />
               </SocialButton>
             </Stack>
           </Stack>
