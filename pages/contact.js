@@ -30,7 +30,7 @@ import LargeWithNewsletter from '@/components/footer'
 
 export default function contact({ navigation }) {
   const textColor = useColorModeValue("gray.900", "white");
-  const iconColor = useColorModeValue("#E7D3C6", "white");
+  const iconColor = useColorModeValue("#E7D3C6", "#D9B49D");
   return (
     <Box>
       <Navigation {...navigation} />
