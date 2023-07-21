@@ -7,18 +7,19 @@ import {
   import LargeWithNewsletter from '@/components/footer'
   
   export default function contact({ navigation }) {
+    const titleColor = useColorModeValue("gray.600", "white");
     const textColor = useColorModeValue("gray.600", "palette.black");
     return (
       <Box>
         <Navigation {...navigation} />
         <Box
-          color="gray.900"
+          color={textColor}
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}
         >
           <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }} style={{ fontSize: '20px', color: textColor, }}>
-          <h1 style={{ fontSize: '48px', fontWeight: 800, textAlign: 'center', width: '100%' }}>About Me</h1>
+          <h1 style={{ fontSize: '48px', fontWeight: 800, textAlign: 'center', width: '100%' }} color={titleColor}>About Me</h1>
 
             <p>To me, data is not just a collection of numbers and statistics, but the key that unlocks transformative insights and endless possibilities. Each data point holds a unique story, and my passion lies in weaving those stories into actionable insights that drive meaningful impact in businesses and people’s lives. As a Data Scientist, I not only delve deep into the data to uncover valuable insights, but I also have a strong interest in using machine learning models to generate ethical and practical solutions for real-world challenges.</p>
             <p>My unique journey started as a kid fascinated by numbers, technology, and data. I pursued my passion and studied Economics and Finance in college, which gave me a strong foundation in quantitative analysis and a data-driven mindset. After college, I started my career as an administrative assistant and later transitioned to the finance industry as a bank teller. While these roles didn't directly involve data science, they deepened my curiosity and interest in data analytics and machine learning. Additionally, they taught me valuable skills in organization, communication, attention to detail, and problem-solving, which are crucial in the world of data.</p>
