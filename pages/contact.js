@@ -24,11 +24,13 @@ import {
   MdFacebook,
   MdOutlineEmail
 } from 'react-icons/md'
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
+import { useColorModeValue } from '@chakra-ui/react'
 import Navigation from '@/components/navigation'
 import LargeWithNewsletter from '@/components/footer'
 
 export default function contact({ navigation }) {
+  const textColor = useColorModeValue("gray.900", "white");
+  const iconColor = useColorModeValue("#E7D3C6", "white");
   return (
     <Box>
       <Navigation {...navigation} />
@@ -52,9 +54,9 @@ export default function contact({ navigation }) {
                     height="48px"
                     width="200px"
                     variant="ghost"
-                    color="gray.900"
+                    color={textColor}
                     _hover={{ border: '2px solid #E7D3C6' }}
-                    leftIcon={<MdPhone color="#E7D3C6" size="20px" />}
+                    leftIcon={<MdPhone color={iconColor} size="20px" />}
                     onClick={() => {
                       window.location.href = 'tel:+16125640070';
                     }}
@@ -66,9 +68,9 @@ export default function contact({ navigation }) {
                     height="48px"
                     width="200px"
                     variant="ghost"
-                    color="gray.900"
+                    color={textColor}
                     _hover={{ border: '2px solid #E7D3C6' }}
-                    leftIcon={<MdEmail color="#E7D3C6" size="20px" />}
+                    leftIcon={<MdEmail color={iconColor} size="20px" />}
                     onClick={() => {
                       window.location.href = 'mailto:jiannina.pinto@gmail.com';
                     }}
@@ -80,9 +82,9 @@ export default function contact({ navigation }) {
                     height="48px"
                     width="200px"
                     variant="ghost"
-                    color="gray.900"
+                    color={textColor}
                     _hover={{ border: 'none' }}
-                    leftIcon={<MdLocationOn color="#E7D3C6" size="20px" />}
+                    leftIcon={<MdLocationOn color={iconColor} size="20px" />}
                   >
                     Twin Cities, Minnesota
                   </Button>

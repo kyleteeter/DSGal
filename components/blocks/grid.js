@@ -20,7 +20,7 @@ export default function Grid({
   const stackLayout = layout === 'STACK'
   const splitLayout = layout === 'SPLIT'
   const bgColor = useColorModeValue('white', 'gray.800')
-  const subtitleColor = useColorModeValue('gray.500', 'gray.400')
+  const subtitleColor = useColorModeValue('gray.500', 'white')
   const textColor = useColorModeValue('gray.800', 'white')
 
   return (
