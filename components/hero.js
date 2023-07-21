@@ -67,7 +67,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   Data Scientist
                 </Text>
               </Heading>
-              <Text color={'gray.500'}>To me, data is not just a collection of numbers and statistics, but the key that unlocks transformative insights and endless possibilities. Each data point holds a unique story, and my passionlies in weaving those stories into actionable insights that drive meaningful impact in businesses and people’s lives. As a Data Scientist, I not only delve deep into the data to uncover valuable insights, but I also have a strong interest on using machine learning models to generate ethical and practical solutions for real-world challenges.</Text>
+              <Text color={'gray.500'}>To me, data is not just a collection of numbers and statistics, but the key that unlocks transformative insights and endless possibilities. Each data point holds a unique story, and my passion lies in weaving those stories into actionable insights that drive meaningful impact in businesses and people’s lives. As a Data Scientist, I not only delve deep into the data to uncover valuable insights, but I also have a strong interest on using machine learning models to generate ethical and practical solutions for real-world challenges.</Text>
 
               {buttons && (
                 <Stack
