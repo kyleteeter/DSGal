@@ -152,7 +152,7 @@ export default function Navigation() {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "palette.black");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkHoverColor = useColorModeValue("white", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
