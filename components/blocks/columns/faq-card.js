@@ -1,7 +1,11 @@
 import { Box } from '@chakra-ui/react'
 import { MDXRemote } from 'next-mdx-remote'
+import { useColorModeValue } from '@chakra-ui/react'
+
 
 export default function FAQCard({ content, title }) {
+  const textColor = useColorModeValue("gray.900", "white");
+
   return (
     <div>
       <Box
@@ -9,7 +13,7 @@ export default function FAQCard({ content, title }) {
         fontSize="lg"
         lineHeight="6"
         fontWeight="medium"
-        color="gray.900"
+        color={textColor}
       >
         {title}
       </Box>
