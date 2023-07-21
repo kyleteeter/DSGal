@@ -151,8 +151,8 @@ export default function Navigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "palette.black");
-  const linkHoverColor = useColorModeValue("white", "white");
+  const linkColor = useColorModeValue("gray.600", "white");
+  const linkHoverColor = useColorModeValue("palette.black", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -170,7 +170,7 @@ const DesktopNav = () => {
                   color={linkColor}
                   _hover={{
                     textDecoration: "none",
-                    color: "white",
+                    color: linkHoverColor,
                   }}
                 >
                   {navItem.label}
