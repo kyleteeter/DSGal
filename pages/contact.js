@@ -30,6 +30,7 @@ import LargeWithNewsletter from '@/components/footer'
 
 export default function contact({ navigation }) {
   const textColor = useColorModeValue("gray.900", "white");
+  const subColor = useColorModeValue("gray.600", "#F8F8FF");
   const iconColor = useColorModeValue("#E7D3C6", "#D9B49D");
   return (
     <Box>
@@ -44,7 +45,7 @@ export default function contact({ navigation }) {
           <WrapItem w="30%">
             <Box m={16}>
               <Heading >Contact</Heading>
-              <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.600">
+              <Text mt={{ sm: 3, md: 3, lg: 5 }} color={subColor}">
                 Send me an email or schedule a call if you would like to chat. 
               </Text>
               <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>

@@ -8,7 +8,7 @@ import {
   
   export default function contact({ navigation }) {
     const titleColor = useColorModeValue("palette.black", "white");
-    const textColor = useColorModeValue("gray.600", "white");
+    const textColor = useColorModeValue("gray.600", "#F8F8FF");
     return (
       <Box>
         <Navigation {...navigation} />
