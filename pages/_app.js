@@ -1,5 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
+import { Analytics } from '@vercel/analytics/react';
 
 import { SiteLayout } from '@/layout'
 
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <DefaultSeo {...defaultSEO} />
       {getLayout(<Component {...pageProps} />)}
+      <Analytics />
     </ChakraProvider>
   )
 }
