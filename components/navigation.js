@@ -33,7 +33,7 @@ import Image from "next/image";
 const NAV_ITEMS = [
   {
     label: "About",
-    href: "about",
+    href: "/about",
   },
   // {
   //   label: "Portfolio",
@@ -52,11 +52,11 @@ const NAV_ITEMS = [
   // },
   {
     label: "Projects",
-    href: "project",
+    href: "/projects",
   },
   {
     label: "Hire Me",
-    href: "contact",
+    href: "/contact",
   },
 ];
 
