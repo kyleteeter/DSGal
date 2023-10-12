@@ -206,14 +206,14 @@ export default function BlogPost({ nextPost, post, previousPost }) {
               </Stack>
             )}
             <Box pt={8}>
-              <NextLink href="/blog">
+              <NextLink href="/project">
                 <Link
                   color="pink.500"
                   _hover={{
                     color: 'pink.500'
                   }}
                 >
-                  &larr; Back to the blog
+                  &larr; Back to the projects
                 </Link>
               </NextLink>
             </Box>
