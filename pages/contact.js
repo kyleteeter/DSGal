@@ -59,10 +59,10 @@ export default function contact({ navigation }) {
                     _hover={{ border: '2px solid #E7D3C6' }}
                     leftIcon={<MdPhone color={iconColor} size="20px" />}
                     onClick={() => {
-                      window.location.href = 'tel:+16125640070';
+                      window.location.href = 'tel:+16124702007 ';
                     }}
                   >
-                    +1 (612) 564-0070
+                    +1 (612) 470-2007 
                   </Button>
                   <Button
                     size="md"
@@ -95,7 +95,7 @@ export default function contact({ navigation }) {
           </WrapItem>
           <WrapItem w="50%" bg="gray.900" borderRadius="lg">
             <Box m={16} color="#white" w="100%">
-            <div className="calendly-inline-widget" data-url="https://calendly.com/jiannina-pinto/20min" style={{ minWidth: '320px', height: '700px' }}></div>
+            <div className="calendly-inline-widget" data-url="https://calendly.com/jiannina-pinto/analytics_discussion_opportunities" style={{ minWidth: '320px', height: '700px' }}></div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </Box>
           </WrapItem>
