@@ -46,7 +46,7 @@ export default function Hero({ buttons, image, navigation, page }) {
                   Hi! My name is
                 </Text>
                 <br />
-                <Text as={'span'}>Jiannina P. </Text>
+                <Text as={'span'}>Jiannina </Text>
                 <br />
                 <Text
                   as={'span'}
