@@ -7,7 +7,7 @@ export default function StatSection({
   gridTitle,
   ...props
 }) {
-  if (!(columns || columns.length)) return null
+  if (!Array.isArray(columns) || columns.length === 0) return null
 
   const bgColor = useColorModeValue('white', 'gray.800')
   const headerColor = useColorModeValue('gray.900', 'white')
