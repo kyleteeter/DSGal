@@ -110,7 +110,7 @@ export default function Hero({ buttons, image, navigation, page }) {
               />
               <Box
                 position={'relative'}
-                height={'800px'}
+                height={{ base: '500px', lg: '800px' }}
                 rounded={'2xl'}
                 boxShadow={'2xl'}
                 width={'full'}
